@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="uniScheduleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbClassroom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NameClass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int16" Nullable="false" />
+    <Property Name="FloorId" Type="Int32" Nullable="false" />
+    <Property Name="TypesClassroomId2" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbSchedule" Relationship="Self.ClassroomId" FromRole="tbClassroom" ToRole="tbSchedule" />
+    <NavigationProperty Name="tbFloor" Relationship="Self.FloorId" FromRole="tbClassroom" ToRole="tbFloor" />
+    <NavigationProperty Name="tbTypesClassroom" Relationship="Self.TypesClassroomId2" FromRole="tbClassroom" ToRole="tbTypesClassroom" />
+  </EntityType>
+  <EntityType Name="tbDays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Days_" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdSubInst2" Type="Int32" Nullable="false" />
+    <Property Name="HoursId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbHours" Relationship="Self.HoursId" FromRole="tbDays" ToRole="tbHours" />
+    <NavigationProperty Name="tbSubjectsInstructors" Relationship="Self.IdSubInst2" FromRole="tbDays" ToRole="tbSubjectsInstructors" />
+  </EntityType>
+  <EntityType Name="tbDegree">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Drgree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbInstructors" Relationship="Self.IdDegree" FromRole="tbDegree" ToRole="tbInstructors" />
+  </EntityType>
+  <EntityType Name="tbFieldsOfStudy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdGroup" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbGroups" Relationship="Self.IdGroup" FromRole="tbFieldsOfStudy" ToRole="tbGroups" />
+  </EntityType>
+  <EntityType Name="tbFloor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameFloor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbClassroom" Relationship="Self.FloorId" FromRole="tbFloor" ToRole="tbClassroom" />
+  </EntityType>
+  <EntityType Name="tbGroups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameGroups" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbFieldsOfStudy" Relationship="Self.IdGroup" FromRole="tbGroups" ToRole="tbFieldsOfStudy" />
+    <NavigationProperty Name="tbSchedule" Relationship="Self.GroupsId" FromRole="tbGroups" ToRole="tbSchedule" />
+    <NavigationProperty Name="tbYearOfStudy" Relationship="Self.IdGroups" FromRole="tbGroups" ToRole="tbYearOfStudy" />
+  </EntityType>
+  <EntityType Name="tbHours">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hour_" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdSubInst" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbDays" Relationship="Self.HoursId" FromRole="tbHours" ToRole="tbDays" />
+    <NavigationProperty Name="tbSubjectsInstructors" Relationship="Self.IdSubInst" FromRole="tbHours" ToRole="tbSubjectsInstructors" />
+  </EntityType>
+  <EntityType Name="tbInstructors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdDegree" Type="Int32" Nullable="false" />
+    <Property Name="OfficeNo" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbDegree" Relationship="Self.IdDegree" FromRole="tbInstructors" ToRole="tbDegree" />
+    <NavigationProperty Name="tbSubjectsInstructors" Relationship="Self.IdInst" FromRole="tbInstructors" ToRole="tbSubjectsInstructors" />
+    <NavigationProperty Name="tbSchedule" Relationship="Self.InstructorsId" FromRole="tbInstructors" ToRole="tbSchedule" />
+  </EntityType>
+  <EntityType Name="tbSchedule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectsId" Type="Int32" Nullable="false" />
+    <Property Name="ClassroomId" Type="Int32" Nullable="false" />
+    <Property Name="GroupsId" Type="Int32" Nullable="false" />
+    <Property Name="InstructorsId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbClassroom" Relationship="Self.ClassroomId" FromRole="tbSchedule" ToRole="tbClassroom" />
+    <NavigationProperty Name="tbGroups" Relationship="Self.GroupsId" FromRole="tbSchedule" ToRole="tbGroups" />
+    <NavigationProperty Name="tbInstructors" Relationship="Self.InstructorsId" FromRole="tbSchedule" ToRole="tbInstructors" />
+    <NavigationProperty Name="tbSubjects" Relationship="Self.SubjectsId" FromRole="tbSchedule" ToRole="tbSubjects" />
+  </EntityType>
+  <EntityType Name="tbSubjects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubjectsId_" Type="Int32" Nullable="false" />
+    <Property Name="TypesSubjectsId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbSchedule" Relationship="Self.SubjectsId" FromRole="tbSubjects" ToRole="tbSchedule" />
+    <NavigationProperty Name="tbSubjectsInstructors" Relationship="Self.IdSub" FromRole="tbSubjects" ToRole="tbSubjectsInstructors" />
+    <NavigationProperty Name="tbSubjects1" Relationship="Self.SubjectsId_" FromRole="tbSubjects" ToRole="tbSubjects1" />
+    <NavigationProperty Name="tbSubjects2" Relationship="Self.SubjectsId_" FromRole="tbSubjects1" ToRole="tbSubjects" />
+    <NavigationProperty Name="tbTypesSubjects" Relationship="Self.TypesSubjectsId" FromRole="tbSubjects" ToRole="tbTypesSubjects" />
+  </EntityType>
+  <EntityType Name="tbSubjectsInstructors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdSub" Type="Int32" Nullable="false" />
+    <Property Name="IdInst" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbDays" Relationship="Self.IdSubInst2" FromRole="tbSubjectsInstructors" ToRole="tbDays" />
+    <NavigationProperty Name="tbHours" Relationship="Self.IdSubInst" FromRole="tbSubjectsInstructors" ToRole="tbHours" />
+    <NavigationProperty Name="tbInstructors" Relationship="Self.IdInst" FromRole="tbSubjectsInstructors" ToRole="tbInstructors" />
+    <NavigationProperty Name="tbSubjects" Relationship="Self.IdSub" FromRole="tbSubjectsInstructors" ToRole="tbSubjects" />
+  </EntityType>
+  <EntityType Name="tbTypesClassroom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameTypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClassroomId" Type="Int32" Nullable="false" />
+    <Property Name="Types_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbClassroom" Relationship="Self.TypesClassroomId2" FromRole="tbTypesClassroom" ToRole="tbClassroom" />
+  </EntityType>
+  <EntityType Name="tbTypesSubjects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameTypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbSubjects" Relationship="Self.TypesSubjectsId" FromRole="tbTypesSubjects" ToRole="tbSubjects" />
+  </EntityType>
+  <EntityType Name="tbYearOfStudy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YearOfStudyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdGroups" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbGroups" Relationship="Self.IdGroups" FromRole="tbYearOfStudy" ToRole="tbGroups" />
+  </EntityType>
+  <Association Name="ClassroomId">
+    <End Role="tbClassroom" Type="Self.tbClassroom" Multiplicity="1" />
+    <End Role="tbSchedule" Type="Self.tbSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbClassroom">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSchedule">
+        <PropertyRef Name="ClassroomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FloorId">
+    <End Role="tbFloor" Type="Self.tbFloor" Multiplicity="1" />
+    <End Role="tbClassroom" Type="Self.tbClassroom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFloor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbClassroom">
+        <PropertyRef Name="FloorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TypesClassroomId2">
+    <End Role="tbTypesClassroom" Type="Self.tbTypesClassroom" Multiplicity="1" />
+    <End Role="tbClassroom" Type="Self.tbClassroom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTypesClassroom">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbClassroom">
+        <PropertyRef Name="TypesClassroomId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HoursId">
+    <End Role="tbHours" Type="Self.tbHours" Multiplicity="1" />
+    <End Role="tbDays" Type="Self.tbDays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHours">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbDays">
+        <PropertyRef Name="HoursId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdSubInst2">
+    <End Role="tbSubjectsInstructors" Type="Self.tbSubjectsInstructors" Multiplicity="1" />
+    <End Role="tbDays" Type="Self.tbDays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSubjectsInstructors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbDays">
+        <PropertyRef Name="IdSubInst2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdDegree">
+    <End Role="tbDegree" Type="Self.tbDegree" Multiplicity="1" />
+    <End Role="tbInstructors" Type="Self.tbInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDegree">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbInstructors">
+        <PropertyRef Name="IdDegree" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdGroup">
+    <End Role="tbGroups" Type="Self.tbGroups" Multiplicity="1" />
+    <End Role="tbFieldsOfStudy" Type="Self.tbFieldsOfStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbGroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbFieldsOfStudy">
+        <PropertyRef Name="IdGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GroupsId">
+    <End Role="tbGroups" Type="Self.tbGroups" Multiplicity="1" />
+    <End Role="tbSchedule" Type="Self.tbSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbGroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSchedule">
+        <PropertyRef Name="GroupsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdGroups">
+    <End Role="tbGroups" Type="Self.tbGroups" Multiplicity="1" />
+    <End Role="tbYearOfStudy" Type="Self.tbYearOfStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbGroups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbYearOfStudy">
+        <PropertyRef Name="IdGroups" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdSubInst">
+    <End Role="tbSubjectsInstructors" Type="Self.tbSubjectsInstructors" Multiplicity="1" />
+    <End Role="tbHours" Type="Self.tbHours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSubjectsInstructors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbHours">
+        <PropertyRef Name="IdSubInst" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdInst">
+    <End Role="tbInstructors" Type="Self.tbInstructors" Multiplicity="1" />
+    <End Role="tbSubjectsInstructors" Type="Self.tbSubjectsInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbInstructors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSubjectsInstructors">
+        <PropertyRef Name="IdInst" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstructorsId">
+    <End Role="tbInstructors" Type="Self.tbInstructors" Multiplicity="1" />
+    <End Role="tbSchedule" Type="Self.tbSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbInstructors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSchedule">
+        <PropertyRef Name="InstructorsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubjectsId">
+    <End Role="tbSubjects" Type="Self.tbSubjects" Multiplicity="1" />
+    <End Role="tbSchedule" Type="Self.tbSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSubjects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSchedule">
+        <PropertyRef Name="SubjectsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IdSub">
+    <End Role="tbSubjects" Type="Self.tbSubjects" Multiplicity="1" />
+    <End Role="tbSubjectsInstructors" Type="Self.tbSubjectsInstructors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSubjects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSubjectsInstructors">
+        <PropertyRef Name="IdSub" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubjectsId_">
+    <End Role="tbSubjects" Type="Self.tbSubjects" Multiplicity="1" />
+    <End Role="tbSubjects1" Type="Self.tbSubjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSubjects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSubjects1">
+        <PropertyRef Name="SubjectsId_" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TypesSubjectsId">
+    <End Role="tbTypesSubjects" Type="Self.tbTypesSubjects" Multiplicity="1" />
+    <End Role="tbSubjects" Type="Self.tbSubjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTypesSubjects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbSubjects">
+        <PropertyRef Name="TypesSubjectsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="uniScheduleDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbClassroom" EntityType="Self.tbClassroom" />
+    <EntitySet Name="tbDays" EntityType="Self.tbDays" />
+    <EntitySet Name="tbDegree" EntityType="Self.tbDegree" />
+    <EntitySet Name="tbFieldsOfStudy" EntityType="Self.tbFieldsOfStudy" />
+    <EntitySet Name="tbFloor" EntityType="Self.tbFloor" />
+    <EntitySet Name="tbGroups" EntityType="Self.tbGroups" />
+    <EntitySet Name="tbHours" EntityType="Self.tbHours" />
+    <EntitySet Name="tbInstructors" EntityType="Self.tbInstructors" />
+    <EntitySet Name="tbSchedule" EntityType="Self.tbSchedule" />
+    <EntitySet Name="tbSubjects" EntityType="Self.tbSubjects" />
+    <EntitySet Name="tbSubjectsInstructors" EntityType="Self.tbSubjectsInstructors" />
+    <EntitySet Name="tbTypesClassroom" EntityType="Self.tbTypesClassroom" />
+    <EntitySet Name="tbTypesSubjects" EntityType="Self.tbTypesSubjects" />
+    <EntitySet Name="tbYearOfStudy" EntityType="Self.tbYearOfStudy" />
+    <AssociationSet Name="ClassroomId" Association="Self.ClassroomId">
+      <End Role="tbClassroom" EntitySet="tbClassroom" />
+      <End Role="tbSchedule" EntitySet="tbSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FloorId" Association="Self.FloorId">
+      <End Role="tbFloor" EntitySet="tbFloor" />
+      <End Role="tbClassroom" EntitySet="tbClassroom" />
+    </AssociationSet>
+    <AssociationSet Name="TypesClassroomId2" Association="Self.TypesClassroomId2">
+      <End Role="tbTypesClassroom" EntitySet="tbTypesClassroom" />
+      <End Role="tbClassroom" EntitySet="tbClassroom" />
+    </AssociationSet>
+    <AssociationSet Name="HoursId" Association="Self.HoursId">
+      <End Role="tbHours" EntitySet="tbHours" />
+      <End Role="tbDays" EntitySet="tbDays" />
+    </AssociationSet>
+    <AssociationSet Name="IdSubInst2" Association="Self.IdSubInst2">
+      <End Role="tbSubjectsInstructors" EntitySet="tbSubjectsInstructors" />
+      <End Role="tbDays" EntitySet="tbDays" />
+    </AssociationSet>
+    <AssociationSet Name="IdDegree" Association="Self.IdDegree">
+      <End Role="tbDegree" EntitySet="tbDegree" />
+      <End Role="tbInstructors" EntitySet="tbInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="IdGroup" Association="Self.IdGroup">
+      <End Role="tbGroups" EntitySet="tbGroups" />
+      <End Role="tbFieldsOfStudy" EntitySet="tbFieldsOfStudy" />
+    </AssociationSet>
+    <AssociationSet Name="GroupsId" Association="Self.GroupsId">
+      <End Role="tbGroups" EntitySet="tbGroups" />
+      <End Role="tbSchedule" EntitySet="tbSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="IdGroups" Association="Self.IdGroups">
+      <End Role="tbGroups" EntitySet="tbGroups" />
+      <End Role="tbYearOfStudy" EntitySet="tbYearOfStudy" />
+    </AssociationSet>
+    <AssociationSet Name="IdSubInst" Association="Self.IdSubInst">
+      <End Role="tbSubjectsInstructors" EntitySet="tbSubjectsInstructors" />
+      <End Role="tbHours" EntitySet="tbHours" />
+    </AssociationSet>
+    <AssociationSet Name="IdInst" Association="Self.IdInst">
+      <End Role="tbInstructors" EntitySet="tbInstructors" />
+      <End Role="tbSubjectsInstructors" EntitySet="tbSubjectsInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="InstructorsId" Association="Self.InstructorsId">
+      <End Role="tbInstructors" EntitySet="tbInstructors" />
+      <End Role="tbSchedule" EntitySet="tbSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="SubjectsId" Association="Self.SubjectsId">
+      <End Role="tbSubjects" EntitySet="tbSubjects" />
+      <End Role="tbSchedule" EntitySet="tbSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="IdSub" Association="Self.IdSub">
+      <End Role="tbSubjects" EntitySet="tbSubjects" />
+      <End Role="tbSubjectsInstructors" EntitySet="tbSubjectsInstructors" />
+    </AssociationSet>
+    <AssociationSet Name="SubjectsId_" Association="Self.SubjectsId_">
+      <End Role="tbSubjects" EntitySet="tbSubjects" />
+      <End Role="tbSubjects1" EntitySet="tbSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="TypesSubjectsId" Association="Self.TypesSubjectsId">
+      <End Role="tbTypesSubjects" EntitySet="tbTypesSubjects" />
+      <End Role="tbSubjects" EntitySet="tbSubjects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

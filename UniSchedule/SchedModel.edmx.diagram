@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a2bbec1b3044d3e9be02fe7f6e64282" Name="Diagram1">
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbClassroom" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbDays" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbDegree" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbFieldsOfStudy" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbFloor" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbGroups" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbHours" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbInstructors" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbSchedule" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbSubjects" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbSubjectsInstructors" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbTypesClassroom" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbTypesSubjects" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="uniScheduleDBModel.tbYearOfStudy" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <AssociationConnector Association="uniScheduleDBModel.ClassroomId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.FloorId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.TypesClassroomId2" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.HoursId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdSubInst2" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdDegree" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.GroupsId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdSubInst" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdInst" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.InstructorsId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.SubjectsId" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.IdSub" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.SubjectsId_" ManuallyRouted="false" />
+        <AssociationConnector Association="uniScheduleDBModel.TypesSubjectsId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

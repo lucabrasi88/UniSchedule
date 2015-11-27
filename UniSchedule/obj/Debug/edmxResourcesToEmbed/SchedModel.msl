@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="uniScheduleDBModelStoreContainer" CdmEntityContainer="uniScheduleDBEntities">
+    <EntitySetMapping Name="tbClassroom">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbClassroom">
+        <MappingFragment StoreEntitySet="tbClassroom">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="NameClass" ColumnName="NameClass" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="FloorId" ColumnName="FloorId" />
+          <ScalarProperty Name="TypesClassroomId2" ColumnName="TypesClassroomId2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDays">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbDays">
+        <MappingFragment StoreEntitySet="tbDays">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Days_" ColumnName="Days_" />
+          <ScalarProperty Name="IdSubInst2" ColumnName="IdSubInst2" />
+          <ScalarProperty Name="HoursId" ColumnName="HoursId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDegree">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbDegree">
+        <MappingFragment StoreEntitySet="tbDegree">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Drgree" ColumnName="Drgree" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFieldsOfStudy">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbFieldsOfStudy">
+        <MappingFragment StoreEntitySet="tbFieldsOfStudy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFloor">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbFloor">
+        <MappingFragment StoreEntitySet="tbFloor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameFloor" ColumnName="NameFloor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbGroups">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbGroups">
+        <MappingFragment StoreEntitySet="tbGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameGroups" ColumnName="NameGroups" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbHours">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbHours">
+        <MappingFragment StoreEntitySet="tbHours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Hour_" ColumnName="Hour_" />
+          <ScalarProperty Name="IdSubInst" ColumnName="IdSubInst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInstructors">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbInstructors">
+        <MappingFragment StoreEntitySet="tbInstructors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IdDegree" ColumnName="IdDegree" />
+          <ScalarProperty Name="OfficeNo" ColumnName="OfficeNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSchedule">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbSchedule">
+        <MappingFragment StoreEntitySet="tbSchedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="SubjectsId" ColumnName="SubjectsId" />
+          <ScalarProperty Name="ClassroomId" ColumnName="ClassroomId" />
+          <ScalarProperty Name="GroupsId" ColumnName="GroupsId" />
+          <ScalarProperty Name="InstructorsId" ColumnName="InstructorsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubjects">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbSubjects">
+        <MappingFragment StoreEntitySet="tbSubjects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SubjectsId_" ColumnName="SubjectsId_" />
+          <ScalarProperty Name="TypesSubjectsId" ColumnName="TypesSubjectsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSubjectsInstructors">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbSubjectsInstructors">
+        <MappingFragment StoreEntitySet="tbSubjectsInstructors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="IdSub" ColumnName="IdSub" />
+          <ScalarProperty Name="IdInst" ColumnName="IdInst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTypesClassroom">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbTypesClassroom">
+        <MappingFragment StoreEntitySet="tbTypesClassroom">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameTypes" ColumnName="NameTypes" />
+          <ScalarProperty Name="ClassroomId" ColumnName="ClassroomId" />
+          <ScalarProperty Name="Types_" ColumnName="Types_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTypesSubjects">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbTypesSubjects">
+        <MappingFragment StoreEntitySet="tbTypesSubjects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameTypes" ColumnName="NameTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbYearOfStudy">
+      <EntityTypeMapping TypeName="uniScheduleDBModel.tbYearOfStudy">
+        <MappingFragment StoreEntitySet="tbYearOfStudy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="YearOfStudyName" ColumnName="YearOfStudyName" />
+          <ScalarProperty Name="IdGroups" ColumnName="IdGroups" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

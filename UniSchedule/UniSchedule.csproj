@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41A66F7B-53CA-4C18-B14B-9444E9B947E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UniSchedule</RootNamespace>
+    <AssemblyName>UniSchedule</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="other_schedule2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="uniScheduleDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\InstructorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\InstructorAdd.Designer.cs">
+      <DependentUpon>InstructorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\SubjectAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\SubjectAdd.Designer.cs">
+      <DependentUpon>SubjectAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchedModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchedModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\ScheduleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\ScheduleAdd.Designer.cs">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ScheduleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ScheduleEdit.Designer.cs">
+      <DependentUpon>ScheduleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForms\ScheduleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\ScheduleView.Designer.cs">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tbClassroom.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbDays.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbDegree.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbFieldsOfStudy.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbFloor.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbGroups.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbHours.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbInstructors.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSchedule.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSubjects.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSubjectsInstructors.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTypesClassroom.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTypesSubjects.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbYearOfStudy.cs">
+      <DependentUpon>SchedModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewForms\AddForms\InstructorAdd.resx">
+      <DependentUpon>InstructorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AddForms\SubjectAdd.resx">
+      <DependentUpon>SubjectAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewForms\AddForms\ScheduleAdd.resx">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ScheduleEdit.resx">
+      <DependentUpon>ScheduleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\ScheduleView.resx">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="other_schedule2DataSet.xsc">
+      <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="other_schedule2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>other_schedule2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="other_schedule2DataSet.xss">
+      <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="SchedModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchedModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SchedModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchedModel.edmx</DependentUpon>
+      <LastGenOutput>SchedModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SchedModel.edmx.diagram">
+      <DependentUpon>SchedModel.edmx</DependentUpon>
+    </None>
+    <None Include="SchedModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchedModel.edmx</DependentUpon>
+      <LastGenOutput>SchedModel.cs</LastGenOutput>
+    </None>
+    <None Include="uniScheduleDBDataSet.xsc">
+      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="uniScheduleDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>uniScheduleDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="uniScheduleDBDataSet.xss">
+      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="other_schedule2.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="other_schedule2_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>other_schedule2.mdf</DependentUpon>
+    </Content>
+    <Content Include="uniScheduleDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="uniScheduleDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>uniScheduleDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
