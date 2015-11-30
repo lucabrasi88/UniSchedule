@@ -32,11 +32,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbAdding = new System.Windows.Forms.GroupBox();
             this.btnAddNewItem = new System.Windows.Forms.Button();
             this.rbInstructor = new System.Windows.Forms.RadioButton();
             this.rbSubject = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.gbDeleting = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.rbDeleteInstructorChoice = new System.Windows.Forms.RadioButton();
+            this.rbDeleteSubjectChoice = new System.Windows.Forms.RadioButton();
+            this.gbAdding.SuspendLayout();
+            this.gbDeleting.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -79,17 +84,17 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox1
+            // gbAdding
             // 
-            this.groupBox1.Controls.Add(this.btnAddNewItem);
-            this.groupBox1.Controls.Add(this.rbInstructor);
-            this.groupBox1.Controls.Add(this.rbSubject);
-            this.groupBox1.Location = new System.Drawing.Point(312, 71);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(172, 149);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Szybkie dodawanie";
+            this.gbAdding.Controls.Add(this.btnAddNewItem);
+            this.gbAdding.Controls.Add(this.rbInstructor);
+            this.gbAdding.Controls.Add(this.rbSubject);
+            this.gbAdding.Location = new System.Drawing.Point(312, 71);
+            this.gbAdding.Name = "gbAdding";
+            this.gbAdding.Size = new System.Drawing.Size(172, 149);
+            this.gbAdding.TabIndex = 4;
+            this.gbAdding.TabStop = false;
+            this.gbAdding.Text = "Szybkie dodawanie";
             // 
             // btnAddNewItem
             // 
@@ -123,20 +128,68 @@
             this.rbSubject.Text = "Nowy przedmiot";
             this.rbSubject.UseVisualStyleBackColor = true;
             // 
+            // gbDeleting
+            // 
+            this.gbDeleting.Controls.Add(this.btnDelete);
+            this.gbDeleting.Controls.Add(this.rbDeleteInstructorChoice);
+            this.gbDeleting.Controls.Add(this.rbDeleteSubjectChoice);
+            this.gbDeleting.Location = new System.Drawing.Point(542, 71);
+            this.gbDeleting.Name = "gbDeleting";
+            this.gbDeleting.Size = new System.Drawing.Size(172, 149);
+            this.gbDeleting.TabIndex = 5;
+            this.gbDeleting.TabStop = false;
+            this.gbDeleting.Text = "Szybkie usuwanie";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(19, 104);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Usuń";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // rbDeleteInstructorChoice
+            // 
+            this.rbDeleteInstructorChoice.AutoSize = true;
+            this.rbDeleteInstructorChoice.Location = new System.Drawing.Point(19, 66);
+            this.rbDeleteInstructorChoice.Name = "rbDeleteInstructorChoice";
+            this.rbDeleteInstructorChoice.Size = new System.Drawing.Size(114, 17);
+            this.rbDeleteInstructorChoice.TabIndex = 1;
+            this.rbDeleteInstructorChoice.TabStop = true;
+            this.rbDeleteInstructorChoice.Text = "Usuń wykładowcę";
+            this.rbDeleteInstructorChoice.UseVisualStyleBackColor = true;
+            // 
+            // rbDeleteSubjectChoice
+            // 
+            this.rbDeleteSubjectChoice.AutoSize = true;
+            this.rbDeleteSubjectChoice.Location = new System.Drawing.Point(19, 42);
+            this.rbDeleteSubjectChoice.Name = "rbDeleteSubjectChoice";
+            this.rbDeleteSubjectChoice.Size = new System.Drawing.Size(98, 17);
+            this.rbDeleteSubjectChoice.TabIndex = 0;
+            this.rbDeleteSubjectChoice.TabStop = true;
+            this.rbDeleteSubjectChoice.Text = "Usuń przedmiot";
+            this.rbDeleteSubjectChoice.UseVisualStyleBackColor = true;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 279);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(819, 279);
+            this.Controls.Add(this.gbDeleting);
+            this.Controls.Add(this.gbAdding);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MainMenu";
             this.Text = "UniSchedule";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.gbAdding.ResumeLayout(false);
+            this.gbAdding.PerformLayout();
+            this.gbDeleting.ResumeLayout(false);
+            this.gbDeleting.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -147,10 +200,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbAdding;
         private System.Windows.Forms.Button btnAddNewItem;
         private System.Windows.Forms.RadioButton rbInstructor;
         private System.Windows.Forms.RadioButton rbSubject;
+        private System.Windows.Forms.GroupBox gbDeleting;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.RadioButton rbDeleteInstructorChoice;
+        private System.Windows.Forms.RadioButton rbDeleteSubjectChoice;
     }
 }
 

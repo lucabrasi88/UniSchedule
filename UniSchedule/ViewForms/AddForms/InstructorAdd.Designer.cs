@@ -174,7 +174,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(196, 443);
+            this.btnBack.Location = new System.Drawing.Point(255, 443);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 16;
@@ -184,7 +184,7 @@
             // 
             // btnSaveInstructor
             // 
-            this.btnSaveInstructor.Location = new System.Drawing.Point(90, 443);
+            this.btnSaveInstructor.Location = new System.Drawing.Point(147, 443);
             this.btnSaveInstructor.Name = "btnSaveInstructor";
             this.btnSaveInstructor.Size = new System.Drawing.Size(75, 23);
             this.btnSaveInstructor.TabIndex = 17;
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 493);
+            this.ClientSize = new System.Drawing.Size(489, 493);
             this.Controls.Add(this.btnDeleteSubject);
             this.Controls.Add(this.btnAddSubject);
             this.Controls.Add(this.lbSubjectsHeader);

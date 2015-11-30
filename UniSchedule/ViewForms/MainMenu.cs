@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UniSchedule.ViewForms.AddForms;
+using UniSchedule.ViewForms.DeleteForms;
 
 namespace UniSchedule
 {
@@ -66,6 +67,25 @@ namespace UniSchedule
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (rbDeleteInstructorChoice.Checked == true)
+            {
+                var instructorDeleteForm = new InstructorDelete();
+                instructorDeleteForm.ShowDialog();
+            }
+            else
+            {
+                var subjectDeleteForm = new SubjectDelete();
+                subjectDeleteForm.ShowDialog();
+            }
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

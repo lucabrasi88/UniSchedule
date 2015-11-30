@@ -86,5 +86,10 @@ namespace UniSchedule
         {
 
         }
+
+        private void cbSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

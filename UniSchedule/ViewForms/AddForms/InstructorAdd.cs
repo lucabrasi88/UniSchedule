@@ -54,7 +54,6 @@ namespace UniSchedule.ViewForms.AddForms
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connectionString;
 
-
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "AddNewInstructors";

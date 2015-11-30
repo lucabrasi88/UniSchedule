@@ -19,3 +19,5 @@ C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\D
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ScheduleView.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.InstructorAdd.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.SubjectAdd.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.DeleteForms.InstructorDelete.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.DeleteForms.SubjectDelete.resources
