@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblName = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -44,6 +45,17 @@
             this.txtRoomNo = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSaveInstructor = new System.Windows.Forms.Button();
+            this.listbSubjects = new System.Windows.Forms.ListBox();
+            this.cbSubjects = new System.Windows.Forms.ComboBox();
+            this.lbSubjects = new System.Windows.Forms.Label();
+            this.lbSubjectsHeader = new System.Windows.Forms.Label();
+            this.btnAddSubject = new System.Windows.Forms.Button();
+            this.btnDeleteSubject = new System.Windows.Forms.Button();
+            this.other_schedule2DataSet = new UniSchedule.other_schedule2DataSet();
+            this.tbSubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbSubjectsTableAdapter = new UniSchedule.other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -151,6 +163,7 @@
             this.cbDegree.Name = "cbDegree";
             this.cbDegree.Size = new System.Drawing.Size(164, 21);
             this.cbDegree.TabIndex = 14;
+            this.cbDegree.SelectedIndexChanged += new System.EventHandler(this.cbDegree_SelectedIndexChanged);
             // 
             // txtRoomNo
             // 
@@ -161,7 +174,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(238, 279);
+            this.btnBack.Location = new System.Drawing.Point(196, 443);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 16;
@@ -171,7 +184,7 @@
             // 
             // btnSaveInstructor
             // 
-            this.btnSaveInstructor.Location = new System.Drawing.Point(147, 279);
+            this.btnSaveInstructor.Location = new System.Drawing.Point(90, 443);
             this.btnSaveInstructor.Name = "btnSaveInstructor";
             this.btnSaveInstructor.Size = new System.Drawing.Size(75, 23);
             this.btnSaveInstructor.TabIndex = 17;
@@ -179,11 +192,86 @@
             this.btnSaveInstructor.UseVisualStyleBackColor = true;
             this.btnSaveInstructor.Click += new System.EventHandler(this.btnSaveInstructor_Click);
             // 
+            // listbSubjects
+            // 
+            this.listbSubjects.FormattingEnabled = true;
+            this.listbSubjects.Location = new System.Drawing.Point(254, 252);
+            this.listbSubjects.Name = "listbSubjects";
+            this.listbSubjects.Size = new System.Drawing.Size(164, 147);
+            this.listbSubjects.TabIndex = 18;
+            // 
+            // cbSubjects
+            // 
+            this.cbSubjects.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbSubjectsBindingSource, "LongName", true));
+            this.cbSubjects.FormattingEnabled = true;
+            this.cbSubjects.Location = new System.Drawing.Point(58, 287);
+            this.cbSubjects.Name = "cbSubjects";
+            this.cbSubjects.Size = new System.Drawing.Size(164, 21);
+            this.cbSubjects.TabIndex = 19;
+            this.cbSubjects.SelectedIndexChanged += new System.EventHandler(this.cbSubjects_SelectedIndexChanged);
+            // 
+            // lbSubjects
+            // 
+            this.lbSubjects.AutoSize = true;
+            this.lbSubjects.Location = new System.Drawing.Point(56, 271);
+            this.lbSubjects.Name = "lbSubjects";
+            this.lbSubjects.Size = new System.Drawing.Size(58, 13);
+            this.lbSubjects.TabIndex = 20;
+            this.lbSubjects.Text = "Przedmioty";
+            // 
+            // lbSubjectsHeader
+            // 
+            this.lbSubjectsHeader.AutoSize = true;
+            this.lbSubjectsHeader.Location = new System.Drawing.Point(251, 226);
+            this.lbSubjectsHeader.Name = "lbSubjectsHeader";
+            this.lbSubjectsHeader.Size = new System.Drawing.Size(91, 13);
+            this.lbSubjectsHeader.TabIndex = 21;
+            this.lbSubjectsHeader.Text = "Lista przedmiotów";
+            // 
+            // btnAddSubject
+            // 
+            this.btnAddSubject.Location = new System.Drawing.Point(58, 331);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSubject.TabIndex = 22;
+            this.btnAddSubject.Text = "Dodaj";
+            this.btnAddSubject.UseVisualStyleBackColor = true;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
+            // 
+            // btnDeleteSubject
+            // 
+            this.btnDeleteSubject.Location = new System.Drawing.Point(147, 331);
+            this.btnDeleteSubject.Name = "btnDeleteSubject";
+            this.btnDeleteSubject.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteSubject.TabIndex = 23;
+            this.btnDeleteSubject.Text = "Usuń";
+            this.btnDeleteSubject.UseVisualStyleBackColor = true;
+            // 
+            // other_schedule2DataSet
+            // 
+            this.other_schedule2DataSet.DataSetName = "other_schedule2DataSet";
+            this.other_schedule2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbSubjectsBindingSource
+            // 
+            this.tbSubjectsBindingSource.DataMember = "tbSubjects";
+            this.tbSubjectsBindingSource.DataSource = this.other_schedule2DataSet;
+            // 
+            // tbSubjectsTableAdapter
+            // 
+            this.tbSubjectsTableAdapter.ClearBeforeFill = true;
+            // 
             // InstructorAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 331);
+            this.ClientSize = new System.Drawing.Size(574, 493);
+            this.Controls.Add(this.btnDeleteSubject);
+            this.Controls.Add(this.btnAddSubject);
+            this.Controls.Add(this.lbSubjectsHeader);
+            this.Controls.Add(this.lbSubjects);
+            this.Controls.Add(this.cbSubjects);
+            this.Controls.Add(this.listbSubjects);
             this.Controls.Add(this.btnSaveInstructor);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtRoomNo);
@@ -203,6 +291,8 @@
             this.Name = "InstructorAdd";
             this.Text = "InstructorAdd";
             this.Load += new System.EventHandler(this.InstructorAdd_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +316,14 @@
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSaveInstructor;
+        private System.Windows.Forms.ListBox listbSubjects;
+        private System.Windows.Forms.ComboBox cbSubjects;
+        private System.Windows.Forms.Label lbSubjects;
+        private System.Windows.Forms.Label lbSubjectsHeader;
+        private System.Windows.Forms.Button btnAddSubject;
+        private System.Windows.Forms.Button btnDeleteSubject;
+        private other_schedule2DataSet other_schedule2DataSet;
+        private System.Windows.Forms.BindingSource tbSubjectsBindingSource;
+        private other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter tbSubjectsTableAdapter;
     }
 }

@@ -19,6 +19,7 @@ namespace UniSchedule.ViewForms.AddForms
     {
 
         private DataSet dsDegreeId;
+        private DataSet dsSubjects;
         private static string connectionString = ConfigurationManager.ConnectionStrings["UniScheduleDB"].ConnectionString;
         
 
@@ -29,7 +30,10 @@ namespace UniSchedule.ViewForms.AddForms
 
         private void InstructorAdd_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'other_schedule2DataSet.tbSubjects' table. You can move, or remove it, as needed.
+            this.tbSubjectsTableAdapter.Fill(this.other_schedule2DataSet.tbSubjects);
             AttachDataToDegreeId();
+            AttachDataToSubjectsList();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -40,6 +44,7 @@ namespace UniSchedule.ViewForms.AddForms
         private void btnSaveInstructor_Click(object sender, EventArgs e)
         {
             AddInstructorToDB();
+            
         }
 
         private void AddInstructorToDB()
@@ -95,6 +100,37 @@ namespace UniSchedule.ViewForms.AddForms
             cbDegree.DataSource = dsDegreeId.Tables["daSearch"];
             cbDegree.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDegree.Enabled = true;
+        }
+
+        private void cbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AttachDataToSubjectsList()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = connectionString;
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT LongName FROM tbSubjects", conn);
+            dsSubjects = new DataSet();
+            daSearch.Fill(dsSubjects, "daSearch");
+            cbSubjects.ValueMember = "LongName";
+            cbSubjects.DataSource = dsSubjects.Tables["daSearch"];
+            cbSubjects.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSubjects.Enabled = true;
+            
+        }
+
+        private void cbDegree_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddSubject_Click(object sender, EventArgs e)
+        {
+            listbSubjects.Items.Add(cbSubjects.SelectedValue.ToString());
         }
     }
 }

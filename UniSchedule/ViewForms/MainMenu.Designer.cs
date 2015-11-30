@@ -33,9 +33,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbSubject = new System.Windows.Forms.RadioButton();
-            this.rbInstructor = new System.Windows.Forms.RadioButton();
             this.btnAddNewItem = new System.Windows.Forms.Button();
+            this.rbInstructor = new System.Windows.Forms.RadioButton();
+            this.rbSubject = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Zamknij";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox1
             // 
@@ -90,16 +91,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Szybkie dodawanie";
             // 
-            // rbSubject
+            // btnAddNewItem
             // 
-            this.rbSubject.AutoSize = true;
-            this.rbSubject.Location = new System.Drawing.Point(19, 42);
-            this.rbSubject.Name = "rbSubject";
-            this.rbSubject.Size = new System.Drawing.Size(100, 17);
-            this.rbSubject.TabIndex = 0;
-            this.rbSubject.TabStop = true;
-            this.rbSubject.Text = "Nowy przedmiot";
-            this.rbSubject.UseVisualStyleBackColor = true;
+            this.btnAddNewItem.Location = new System.Drawing.Point(19, 104);
+            this.btnAddNewItem.Name = "btnAddNewItem";
+            this.btnAddNewItem.Size = new System.Drawing.Size(75, 23);
+            this.btnAddNewItem.TabIndex = 2;
+            this.btnAddNewItem.Text = "Dodaj";
+            this.btnAddNewItem.UseVisualStyleBackColor = true;
+            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
             // 
             // rbInstructor
             // 
@@ -112,15 +112,16 @@
             this.rbInstructor.Text = "Nowy wykładowca";
             this.rbInstructor.UseVisualStyleBackColor = true;
             // 
-            // btnAddNewItem
+            // rbSubject
             // 
-            this.btnAddNewItem.Location = new System.Drawing.Point(19, 104);
-            this.btnAddNewItem.Name = "btnAddNewItem";
-            this.btnAddNewItem.Size = new System.Drawing.Size(75, 23);
-            this.btnAddNewItem.TabIndex = 2;
-            this.btnAddNewItem.Text = "Dodaj";
-            this.btnAddNewItem.UseVisualStyleBackColor = true;
-            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
+            this.rbSubject.AutoSize = true;
+            this.rbSubject.Location = new System.Drawing.Point(19, 42);
+            this.rbSubject.Name = "rbSubject";
+            this.rbSubject.Size = new System.Drawing.Size(100, 17);
+            this.rbSubject.TabIndex = 0;
+            this.rbSubject.TabStop = true;
+            this.rbSubject.Text = "Nowy przedmiot";
+            this.rbSubject.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
