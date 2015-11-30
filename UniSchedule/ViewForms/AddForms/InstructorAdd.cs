@@ -130,7 +130,13 @@ namespace UniSchedule.ViewForms.AddForms
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
-            listbSubjects.Items.Add(cbSubjects.SelectedValue.ToString());
+            if(!listbSubjects.Items.Contains(cbSubjects.SelectedValue.ToString()))
+                listbSubjects.Items.Add(cbSubjects.SelectedValue.ToString());
+        }
+
+        private void btnDeleteSubject_Click(object sender, EventArgs e)
+        {
+            listbSubjects.Items.Remove(listbSubjects.SelectedItem);
         }
     }
 }

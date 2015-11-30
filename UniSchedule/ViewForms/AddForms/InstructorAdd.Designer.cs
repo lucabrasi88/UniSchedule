@@ -246,6 +246,7 @@
             this.btnDeleteSubject.TabIndex = 23;
             this.btnDeleteSubject.Text = "Usuń";
             this.btnDeleteSubject.UseVisualStyleBackColor = true;
+            this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
             // other_schedule2DataSet
             // 
