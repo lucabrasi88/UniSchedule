@@ -47,15 +47,17 @@
             this.btnSaveInstructor = new System.Windows.Forms.Button();
             this.listbSubjects = new System.Windows.Forms.ListBox();
             this.cbSubjects = new System.Windows.Forms.ComboBox();
+            this.tbSubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.other_schedule2DataSet = new UniSchedule.other_schedule2DataSet();
             this.lbSubjects = new System.Windows.Forms.Label();
             this.lbSubjectsHeader = new System.Windows.Forms.Label();
             this.btnAddSubject = new System.Windows.Forms.Button();
             this.btnDeleteSubject = new System.Windows.Forms.Button();
-            this.other_schedule2DataSet = new UniSchedule.other_schedule2DataSet();
-            this.tbSubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbSubjectsTableAdapter = new UniSchedule.other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).BeginInit();
+            this.cbSubjectTypes = new System.Windows.Forms.ComboBox();
+            this.lblSubjectTypes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -167,6 +169,8 @@
             // 
             // txtRoomNo
             // 
+            this.txtRoomNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtRoomNo.ForeColor = System.Drawing.Color.Black;
             this.txtRoomNo.Location = new System.Drawing.Point(254, 120);
             this.txtRoomNo.Name = "txtRoomNo";
             this.txtRoomNo.Size = new System.Drawing.Size(164, 20);
@@ -210,6 +214,16 @@
             this.cbSubjects.TabIndex = 19;
             this.cbSubjects.SelectedIndexChanged += new System.EventHandler(this.cbSubjects_SelectedIndexChanged);
             // 
+            // tbSubjectsBindingSource
+            // 
+            this.tbSubjectsBindingSource.DataMember = "tbSubjects";
+            this.tbSubjectsBindingSource.DataSource = this.other_schedule2DataSet;
+            // 
+            // other_schedule2DataSet
+            // 
+            this.other_schedule2DataSet.DataSetName = "other_schedule2DataSet";
+            this.other_schedule2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbSubjects
             // 
             this.lbSubjects.AutoSize = true;
@@ -230,7 +244,7 @@
             // 
             // btnAddSubject
             // 
-            this.btnAddSubject.Location = new System.Drawing.Point(58, 331);
+            this.btnAddSubject.Location = new System.Drawing.Point(58, 376);
             this.btnAddSubject.Name = "btnAddSubject";
             this.btnAddSubject.Size = new System.Drawing.Size(75, 23);
             this.btnAddSubject.TabIndex = 22;
@@ -240,7 +254,7 @@
             // 
             // btnDeleteSubject
             // 
-            this.btnDeleteSubject.Location = new System.Drawing.Point(147, 331);
+            this.btnDeleteSubject.Location = new System.Drawing.Point(147, 376);
             this.btnDeleteSubject.Name = "btnDeleteSubject";
             this.btnDeleteSubject.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteSubject.TabIndex = 23;
@@ -248,25 +262,35 @@
             this.btnDeleteSubject.UseVisualStyleBackColor = true;
             this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
-            // other_schedule2DataSet
-            // 
-            this.other_schedule2DataSet.DataSetName = "other_schedule2DataSet";
-            this.other_schedule2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbSubjectsBindingSource
-            // 
-            this.tbSubjectsBindingSource.DataMember = "tbSubjects";
-            this.tbSubjectsBindingSource.DataSource = this.other_schedule2DataSet;
-            // 
             // tbSubjectsTableAdapter
             // 
             this.tbSubjectsTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbSubjectTypes
+            // 
+            this.cbSubjectTypes.FormattingEnabled = true;
+            this.cbSubjectTypes.Location = new System.Drawing.Point(58, 335);
+            this.cbSubjectTypes.Name = "cbSubjectTypes";
+            this.cbSubjectTypes.Size = new System.Drawing.Size(164, 21);
+            this.cbSubjectTypes.TabIndex = 24;
+            this.cbSubjectTypes.SelectedIndexChanged += new System.EventHandler(this.cbSubjectTypes_SelectedIndexChanged);
+            // 
+            // lblSubjectTypes
+            // 
+            this.lblSubjectTypes.AutoSize = true;
+            this.lblSubjectTypes.Location = new System.Drawing.Point(55, 319);
+            this.lblSubjectTypes.Name = "lblSubjectTypes";
+            this.lblSubjectTypes.Size = new System.Drawing.Size(79, 13);
+            this.lblSubjectTypes.TabIndex = 25;
+            this.lblSubjectTypes.Text = "Typ przedmiotu";
             // 
             // InstructorAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 493);
+            this.Controls.Add(this.lblSubjectTypes);
+            this.Controls.Add(this.cbSubjectTypes);
             this.Controls.Add(this.btnDeleteSubject);
             this.Controls.Add(this.btnAddSubject);
             this.Controls.Add(this.lbSubjectsHeader);
@@ -292,8 +316,8 @@
             this.Name = "InstructorAdd";
             this.Text = "InstructorAdd";
             this.Load += new System.EventHandler(this.InstructorAdd_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +350,7 @@
         private other_schedule2DataSet other_schedule2DataSet;
         private System.Windows.Forms.BindingSource tbSubjectsBindingSource;
         private other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter tbSubjectsTableAdapter;
+        private System.Windows.Forms.ComboBox cbSubjectTypes;
+        private System.Windows.Forms.Label lblSubjectTypes;
     }
 }

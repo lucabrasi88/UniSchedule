@@ -48,5 +48,24 @@ namespace UniSchedule.ViewForms.DeleteForms
         {
             AttachDataToSubjectsList();
         }
+
+        private void btnDeleteSubject_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = connectionString;
+
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "DeleteSubject";
+            cmd.Parameters.AddWithValue("@LongName", cbSubjects.Text.ToString());
+            conn.Open();
+            MessageBox.Show("Connection opened");
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Command Executed");
+            AttachDataToSubjectsList();
+            cbSubjects.Refresh();
+            conn.Close();
+        }
     }
 }

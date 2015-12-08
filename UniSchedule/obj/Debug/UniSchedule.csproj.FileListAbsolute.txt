@@ -12,8 +12,6 @@ C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\D
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\EntityFramework.xml
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ScheduleAdd.resources
-C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\uniScheduleDB.mdf
-C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\uniScheduleDB_log.ldf
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\other_schedule2.mdf
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\other_schedule2_log.ldf
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ScheduleView.resources

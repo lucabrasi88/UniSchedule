@@ -57,6 +57,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -69,15 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbSchedule.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbSchedule.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="other_schedule2DataSet.cs">
+      <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="other_schedule2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="uniScheduleDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewForms\AddForms\InstructorAdd.cs">
       <SubType>Form</SubType>
@@ -111,21 +116,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchedModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchedModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchedModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchedModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchedModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="ViewForms\AddForms\ScheduleAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,48 +134,9 @@
     <Compile Include="ViewForms\ScheduleView.Designer.cs">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="tbClassroom.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbDays.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbDegree.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbFieldsOfStudy.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbFloor.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbGroups.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbHours.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbInstructors.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbSchedule.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbSubjects.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbSubjectsInstructors.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbTypesClassroom.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbTypesSubjects.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbYearOfStudy.cs">
-      <DependentUpon>SchedModel.tt</DependentUpon>
-    </Compile>
+    <None Include="DbSchedule.dbml.layout">
+      <DependentUpon>DbSchedule.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="ViewForms\AddForms\InstructorAdd.resx">
       <DependentUpon>InstructorAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +170,11 @@
     <EmbeddedResource Include="ViewForms\ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DbSchedule.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DbSchedule.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="other_schedule2DataSet.xsc">
       <DependentUpon>other_schedule2DataSet.xsd</DependentUpon>
     </None>
@@ -240,34 +196,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="SchedModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SchedModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="SchedModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchedModel.edmx</DependentUpon>
-      <LastGenOutput>SchedModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="SchedModel.edmx.diagram">
-      <DependentUpon>SchedModel.edmx</DependentUpon>
-    </None>
-    <None Include="SchedModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchedModel.edmx</DependentUpon>
-      <LastGenOutput>SchedModel.cs</LastGenOutput>
-    </None>
-    <None Include="uniScheduleDBDataSet.xsc">
-      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="uniScheduleDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>uniScheduleDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="uniScheduleDBDataSet.xss">
-      <DependentUpon>uniScheduleDBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -290,6 +218,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -299,13 +228,6 @@
     <Content Include="other_schedule2_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>other_schedule2.mdf</DependentUpon>
-    </Content>
-    <Content Include="uniScheduleDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="uniScheduleDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>uniScheduleDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup />

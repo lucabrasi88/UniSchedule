@@ -55,5 +55,16 @@ namespace UniSchedule.Properties {
                 return ((string)(this["other_schedule2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HAL9000\\SQLEXPRESS;Initial Catalog=Schedule2;Integrated Security=True" +
+            "")]
+        public string Schedule2ConnectionString {
+            get {
+                return ((string)(this["Schedule2ConnectionString"]));
+            }
+        }
     }
 }

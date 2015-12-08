@@ -52,7 +52,21 @@ namespace UniSchedule.ViewForms.DeleteForms
 
         private void btnDeleteInstructor_Click(object sender, EventArgs e)
         {
+           /* SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = connectionString;
 
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "DeleteInstructor";
+            cmd.Parameters.AddWithValue("@LongName", cbSubjects.Text.ToString());
+            conn.Open();
+            MessageBox.Show("Connection opened");
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Command Executed");
+            AttachDataToInstructorsList()
+            cbInstructors.Refresh();
+            conn.Close(); */
         }
     }
 }

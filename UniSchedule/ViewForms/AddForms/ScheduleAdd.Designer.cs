@@ -34,17 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFieldOfStudy = new System.Windows.Forms.ComboBox();
             this.tbFieldOfStudyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uniScheduleDBDataSet = new UniSchedule.uniScheduleDBDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tbSubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbSubjectsTableAdapter = new UniSchedule.uniScheduleDBDataSetTableAdapters.tbSubjectsTableAdapter();
-            this.tbFieldOfStudyTableAdapter = new UniSchedule.uniScheduleDBDataSetTableAdapters.tbFieldOfStudyTableAdapter();
+            
             this.other_schedule2DataSet = new UniSchedule.other_schedule2DataSet();
             this.tbFieldsOfStudyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbFieldsOfStudyTableAdapter = new UniSchedule.other_schedule2DataSetTableAdapters.tbFieldsOfStudyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tbFieldOfStudyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uniScheduleDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFieldsOfStudyBindingSource)).BeginInit();
@@ -90,12 +87,8 @@
             // tbFieldOfStudyBindingSource
             // 
             this.tbFieldOfStudyBindingSource.DataMember = "tbFieldOfStudy";
-            this.tbFieldOfStudyBindingSource.DataSource = this.uniScheduleDBDataSet;
             // 
             // uniScheduleDBDataSet
-            // 
-            this.uniScheduleDBDataSet.DataSetName = "uniScheduleDBDataSet";
-            this.uniScheduleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -120,16 +113,10 @@
             // tbSubjectsBindingSource
             // 
             this.tbSubjectsBindingSource.DataMember = "tbSubjects";
-            this.tbSubjectsBindingSource.DataSource = this.uniScheduleDBDataSet;
             // 
-            // tbSubjectsTableAdapter
+            
             // 
-            this.tbSubjectsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbFieldOfStudyTableAdapter
-            // 
-            this.tbFieldOfStudyTableAdapter.ClearBeforeFill = true;
-            // 
+     
             // other_schedule2DataSet
             // 
             this.other_schedule2DataSet.DataSetName = "other_schedule2DataSet";
@@ -159,7 +146,6 @@
             this.Text = "ScheduleAdd";
             this.Load += new System.EventHandler(this.ScheduleAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbFieldOfStudyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uniScheduleDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbFieldsOfStudyBindingSource)).EndInit();
@@ -176,11 +162,11 @@
         private System.Windows.Forms.ComboBox txtFieldOfStudy;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private uniScheduleDBDataSet uniScheduleDBDataSet;
+        
         private System.Windows.Forms.BindingSource tbSubjectsBindingSource;
-        private uniScheduleDBDataSetTableAdapters.tbSubjectsTableAdapter tbSubjectsTableAdapter;
+        
         private System.Windows.Forms.BindingSource tbFieldOfStudyBindingSource;
-        private uniScheduleDBDataSetTableAdapters.tbFieldOfStudyTableAdapter tbFieldOfStudyTableAdapter;
+        
         private other_schedule2DataSet other_schedule2DataSet;
         private System.Windows.Forms.BindingSource tbFieldsOfStudyBindingSource;
         private other_schedule2DataSetTableAdapters.tbFieldsOfStudyTableAdapter tbFieldsOfStudyTableAdapter;

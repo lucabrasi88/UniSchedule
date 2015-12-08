@@ -49,6 +49,7 @@
             this.btnDeleteSubject.TabIndex = 1;
             this.btnDeleteSubject.Text = "Usuń";
             this.btnDeleteSubject.UseVisualStyleBackColor = true;
+            this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
             // 
             // btnBack
             // 

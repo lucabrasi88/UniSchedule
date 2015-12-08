@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Schedule2" Class="DbScheduleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HAL9000\SQLEXPRESS;Initial Catalog=Schedule2;Integrated Security=True" SettingsObjectName="UniSchedule.Properties.Settings" SettingsPropertyName="Schedule2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbClassroom" Member="tbClassrooms">
+    <Type Name="tbClassroom">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameClass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FloorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdTypesClassroom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbClassroom_tbSchedule" Member="tbSchedules" ThisKey="id" OtherKey="ClassroomId" Type="tbSchedule" />
+      <Association Name="tbFloor_tbClassroom" Member="tbFloor" ThisKey="FloorId" OtherKey="id" Type="tbFloor" IsForeignKey="true" />
+      <Association Name="tbTypesClassroom_tbClassroom" Member="tbTypesClassroom" ThisKey="IdTypesClassroom" OtherKey="id" Type="tbTypesClassroom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbDegree" Member="tbDegrees">
+    <Type Name="tbDegree">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DegreeLong" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DegreeShort" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbDegree_tbInstructor" Member="tbInstructors" ThisKey="id" OtherKey="IdDegree" Type="tbInstructor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbFieldsOfStudy" Member="tbFieldsOfStudies">
+    <Type Name="tbFieldsOfStudy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="tbFieldsOfStudy_tbGroup" Member="tbGroups" ThisKey="id" OtherKey="IdFieldsOfStudy" Type="tbGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbFloor" Member="tbFloors">
+    <Type Name="tbFloor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Floor_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameFloor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbFloor_tbClassroom" Member="tbClassrooms" ThisKey="id" OtherKey="FloorId" Type="tbClassroom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbGroups" Member="tbGroups">
+    <Type Name="tbGroup">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameGroups" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdFieldsOfStudy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdYearOfStudy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbGroup_tbSchedule" Member="tbSchedules" ThisKey="id" OtherKey="GroupsId" Type="tbSchedule" />
+      <Association Name="tbFieldsOfStudy_tbGroup" Member="tbFieldsOfStudy" ThisKey="IdFieldsOfStudy" OtherKey="id" Type="tbFieldsOfStudy" IsForeignKey="true" />
+      <Association Name="tbYearOfStudy_tbGroup" Member="tbYearOfStudy" ThisKey="IdYearOfStudy" OtherKey="id" Type="tbYearOfStudy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbHours" Member="tbHours">
+    <Type Name="tbHour">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hours_" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="tbHour_tbSchedule" Member="tbSchedules" ThisKey="id" OtherKey="HoursId" Type="tbSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbInstructors" Member="tbInstructors">
+    <Type Name="tbInstructor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDegree" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OfficeNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="tbInstructor_tbSubjectsInstructor" Member="tbSubjectsInstructors" ThisKey="id" OtherKey="IdInst" Type="tbSubjectsInstructor" />
+      <Association Name="tbDegree_tbInstructor" Member="tbDegree" ThisKey="IdDegree" OtherKey="id" Type="tbDegree" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbMeetings" Member="tbMeetings">
+    <Type Name="tbMeeting">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date_" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="tbMeeting_tbSchedule" Member="tbSchedules" ThisKey="id" OtherKey="MeetingsId" Type="tbSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbSchedule" Member="tbSchedules">
+    <Type Name="tbSchedule">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassroomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoursId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MeetingsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubInstId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbClassroom_tbSchedule" Member="tbClassroom" ThisKey="ClassroomId" OtherKey="id" Type="tbClassroom" IsForeignKey="true" />
+      <Association Name="tbGroup_tbSchedule" Member="tbGroup" ThisKey="GroupsId" OtherKey="id" Type="tbGroup" IsForeignKey="true" />
+      <Association Name="tbHour_tbSchedule" Member="tbHour" ThisKey="HoursId" OtherKey="id" Type="tbHour" IsForeignKey="true" />
+      <Association Name="tbMeeting_tbSchedule" Member="tbMeeting" ThisKey="MeetingsId" OtherKey="id" Type="tbMeeting" IsForeignKey="true" />
+      <Association Name="tbSubjectsInstructor_tbSchedule" Member="tbSubjectsInstructor" ThisKey="SubInstId" OtherKey="id" Type="tbSubjectsInstructor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbSubjects" Member="tbSubjects">
+    <Type Name="tbSubject">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LongName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TypesSubjectsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbSubject_tbSubjectsInstructor" Member="tbSubjectsInstructors" ThisKey="id" OtherKey="IdSub" Type="tbSubjectsInstructor" />
+      <Association Name="tbTypesSubject_tbSubject" Member="tbTypesSubject" ThisKey="TypesSubjectsId" OtherKey="id" Type="tbTypesSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbSubjectsInstructors" Member="tbSubjectsInstructors">
+    <Type Name="tbSubjectsInstructor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdSub" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdInst" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbSubjectsInstructor_tbSchedule" Member="tbSchedules" ThisKey="id" OtherKey="SubInstId" Type="tbSchedule" />
+      <Association Name="tbInstructor_tbSubjectsInstructor" Member="tbInstructor" ThisKey="IdInst" OtherKey="id" Type="tbInstructor" IsForeignKey="true" />
+      <Association Name="tbSubject_tbSubjectsInstructor" Member="tbSubject" ThisKey="IdSub" OtherKey="id" Type="tbSubject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbTypesClassroom" Member="tbTypesClassrooms">
+    <Type Name="tbTypesClassroom">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameTypes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassroomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbTypesClassroom_tbClassroom" Member="tbClassrooms" ThisKey="id" OtherKey="IdTypesClassroom" Type="tbClassroom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbTypesSubjects" Member="tbTypesSubjects">
+    <Type Name="tbTypesSubject">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameTypes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbTypesSubject_tbSubject" Member="tbSubjects" ThisKey="id" OtherKey="TypesSubjectsId" Type="tbSubject" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbYearOfStudy" Member="tbYearOfStudies">
+    <Type Name="tbYearOfStudy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="YearOfStudyName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tbYearOfStudy_tbGroup" Member="tbGroups" ThisKey="id" OtherKey="IdYearOfStudy" Type="tbGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubIns" Member="SubIns">
+    <Type Name="SubIn">
+      <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LongName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TypesSubjectsId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameTypes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewInstructors" Member="ViewInstructors">
+    <Type Name="ViewInstructor">
+      <Column Name="SurnameName" Type="System.String" DbType="VarChar(562) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewSubjectInstructors" Member="ViewSubjectInstructors">
+    <Type Name="ViewSubjectInstructor">
+      <Column Name="[Subjects instructor]" Member="Subjects_instructor" Type="System.String" DbType="VarChar(562) NOT NULL" CanBeNull="false" />
+      <Column Name="LongName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AddDateMeetings" Method="AddDateMeetings">
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdGroups" Parameter="idGroups" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdSchedule" Parameter="idSchedule" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewDegree" Method="AddNewDegree">
+    <Parameter Name="DegreeLong" Parameter="degreeLong" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DegreeShort" Parameter="degreeShort" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewGroup" Method="AddNewGroup">
+    <Parameter Name="NameGroup" Parameter="nameGroup" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="IdFieldsOfStudy" Parameter="idFieldsOfStudy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdYearOfStudy" Parameter="idYearOfStudy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewInstructors" Method="AddNewInstructors">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Surname" Parameter="surname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IdDegree" Parameter="idDegree" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OfficeNo" Parameter="officeNo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Phone1" Parameter="phone1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Phone2" Parameter="phone2" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewSchedule" Method="AddNewSchedule">
+    <Parameter Name="ClassroomId" Parameter="classroomId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GroupsId" Parameter="groupsId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HoursId" Parameter="hoursId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MeetingsId" Parameter="meetingsId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SubInstId" Parameter="subInstId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewSubject" Method="AddNewSubject">
+    <Parameter Name="LongName" Parameter="longName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ShortName" Parameter="shortName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="TypeSubjectId" Parameter="typeSubjectId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddSubIns" Method="AddSubIns">
+    <Parameter Name="IdSub" Parameter="idSub" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdIns" Parameter="idIns" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteInstructor" Method="DeleteInstructor">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Surname" Parameter="surname" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteSubject" Method="DeleteSubject">
+    <Parameter Name="LongName" Parameter="longName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="ShortName" Parameter="shortName" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SearchScheduleInstructors" Method="SearchScheduleInstructors">
+    <Parameter Name="SurnameInstructors" Parameter="surnameInstructors" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateMeetingFrom" Parameter="dateMeetingFrom" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateMeetingTo" Parameter="dateMeetingTo" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="LongName" Parameter="longName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Groups" Parameter="groups" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="YearOfStudy" Parameter="yearOfStudy" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FieldsOfStudy" Parameter="fieldsOfStudy" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SearchScheduleInstructorsResult">
+      <Column Name="Month_" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Day_" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Hours_" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NameGroups" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LongName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NameTypes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
