@@ -39,23 +39,13 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblRoomNo = new System.Windows.Forms.Label();
-            this.txtPhoneTwo = new System.Windows.Forms.TextBox();
-            this.lblPhoneTwo = new System.Windows.Forms.Label();
             this.cbDegree = new System.Windows.Forms.ComboBox();
             this.txtRoomNo = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSaveInstructor = new System.Windows.Forms.Button();
-            this.listbSubjects = new System.Windows.Forms.ListBox();
-            this.cbSubjects = new System.Windows.Forms.ComboBox();
             this.tbSubjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.other_schedule2DataSet = new UniSchedule.other_schedule2DataSet();
-            this.lbSubjects = new System.Windows.Forms.Label();
-            this.lbSubjectsHeader = new System.Windows.Forms.Label();
-            this.btnAddSubject = new System.Windows.Forms.Button();
-            this.btnDeleteSubject = new System.Windows.Forms.Button();
             this.tbSubjectsTableAdapter = new UniSchedule.other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter();
-            this.cbSubjectTypes = new System.Windows.Forms.ComboBox();
-            this.lblSubjectTypes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbSubjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.other_schedule2DataSet)).BeginInit();
             this.SuspendLayout();
@@ -142,22 +132,6 @@
             this.lblRoomNo.TabIndex = 11;
             this.lblRoomNo.Text = "Numer pokoju";
             // 
-            // txtPhoneTwo
-            // 
-            this.txtPhoneTwo.Location = new System.Drawing.Point(58, 226);
-            this.txtPhoneTwo.Name = "txtPhoneTwo";
-            this.txtPhoneTwo.Size = new System.Drawing.Size(164, 20);
-            this.txtPhoneTwo.TabIndex = 13;
-            // 
-            // lblPhoneTwo
-            // 
-            this.lblPhoneTwo.AutoSize = true;
-            this.lblPhoneTwo.Location = new System.Drawing.Point(55, 209);
-            this.lblPhoneTwo.Name = "lblPhoneTwo";
-            this.lblPhoneTwo.Size = new System.Drawing.Size(88, 13);
-            this.lblPhoneTwo.TabIndex = 12;
-            this.lblPhoneTwo.Text = "Numer telefonu 2";
-            // 
             // cbDegree
             // 
             this.cbDegree.FormattingEnabled = true;
@@ -165,7 +139,6 @@
             this.cbDegree.Name = "cbDegree";
             this.cbDegree.Size = new System.Drawing.Size(164, 21);
             this.cbDegree.TabIndex = 14;
-            this.cbDegree.SelectedIndexChanged += new System.EventHandler(this.cbDegree_SelectedIndexChanged);
             // 
             // txtRoomNo
             // 
@@ -178,41 +151,22 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(255, 443);
+            this.btnBack.Location = new System.Drawing.Point(255, 224);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Powrót";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSaveInstructor
             // 
-            this.btnSaveInstructor.Location = new System.Drawing.Point(147, 443);
+            this.btnSaveInstructor.Location = new System.Drawing.Point(147, 224);
             this.btnSaveInstructor.Name = "btnSaveInstructor";
             this.btnSaveInstructor.Size = new System.Drawing.Size(75, 23);
             this.btnSaveInstructor.TabIndex = 17;
             this.btnSaveInstructor.Text = "Zapisz";
             this.btnSaveInstructor.UseVisualStyleBackColor = true;
             this.btnSaveInstructor.Click += new System.EventHandler(this.btnSaveInstructor_Click);
-            // 
-            // listbSubjects
-            // 
-            this.listbSubjects.FormattingEnabled = true;
-            this.listbSubjects.Location = new System.Drawing.Point(254, 252);
-            this.listbSubjects.Name = "listbSubjects";
-            this.listbSubjects.Size = new System.Drawing.Size(164, 147);
-            this.listbSubjects.TabIndex = 18;
-            // 
-            // cbSubjects
-            // 
-            this.cbSubjects.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbSubjectsBindingSource, "LongName", true));
-            this.cbSubjects.FormattingEnabled = true;
-            this.cbSubjects.Location = new System.Drawing.Point(58, 287);
-            this.cbSubjects.Name = "cbSubjects";
-            this.cbSubjects.Size = new System.Drawing.Size(164, 21);
-            this.cbSubjects.TabIndex = 19;
-            this.cbSubjects.SelectedIndexChanged += new System.EventHandler(this.cbSubjects_SelectedIndexChanged);
             // 
             // tbSubjectsBindingSource
             // 
@@ -224,85 +178,19 @@
             this.other_schedule2DataSet.DataSetName = "other_schedule2DataSet";
             this.other_schedule2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // lbSubjects
-            // 
-            this.lbSubjects.AutoSize = true;
-            this.lbSubjects.Location = new System.Drawing.Point(56, 271);
-            this.lbSubjects.Name = "lbSubjects";
-            this.lbSubjects.Size = new System.Drawing.Size(58, 13);
-            this.lbSubjects.TabIndex = 20;
-            this.lbSubjects.Text = "Przedmioty";
-            // 
-            // lbSubjectsHeader
-            // 
-            this.lbSubjectsHeader.AutoSize = true;
-            this.lbSubjectsHeader.Location = new System.Drawing.Point(251, 226);
-            this.lbSubjectsHeader.Name = "lbSubjectsHeader";
-            this.lbSubjectsHeader.Size = new System.Drawing.Size(91, 13);
-            this.lbSubjectsHeader.TabIndex = 21;
-            this.lbSubjectsHeader.Text = "Lista przedmiotów";
-            // 
-            // btnAddSubject
-            // 
-            this.btnAddSubject.Location = new System.Drawing.Point(58, 376);
-            this.btnAddSubject.Name = "btnAddSubject";
-            this.btnAddSubject.Size = new System.Drawing.Size(75, 23);
-            this.btnAddSubject.TabIndex = 22;
-            this.btnAddSubject.Text = "Dodaj";
-            this.btnAddSubject.UseVisualStyleBackColor = true;
-            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
-            // 
-            // btnDeleteSubject
-            // 
-            this.btnDeleteSubject.Location = new System.Drawing.Point(147, 376);
-            this.btnDeleteSubject.Name = "btnDeleteSubject";
-            this.btnDeleteSubject.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteSubject.TabIndex = 23;
-            this.btnDeleteSubject.Text = "Usuń";
-            this.btnDeleteSubject.UseVisualStyleBackColor = true;
-            this.btnDeleteSubject.Click += new System.EventHandler(this.btnDeleteSubject_Click);
-            // 
             // tbSubjectsTableAdapter
             // 
             this.tbSubjectsTableAdapter.ClearBeforeFill = true;
-            // 
-            // cbSubjectTypes
-            // 
-            this.cbSubjectTypes.FormattingEnabled = true;
-            this.cbSubjectTypes.Location = new System.Drawing.Point(58, 335);
-            this.cbSubjectTypes.Name = "cbSubjectTypes";
-            this.cbSubjectTypes.Size = new System.Drawing.Size(164, 21);
-            this.cbSubjectTypes.TabIndex = 24;
-            this.cbSubjectTypes.SelectedIndexChanged += new System.EventHandler(this.cbSubjectTypes_SelectedIndexChanged);
-            // 
-            // lblSubjectTypes
-            // 
-            this.lblSubjectTypes.AutoSize = true;
-            this.lblSubjectTypes.Location = new System.Drawing.Point(55, 319);
-            this.lblSubjectTypes.Name = "lblSubjectTypes";
-            this.lblSubjectTypes.Size = new System.Drawing.Size(79, 13);
-            this.lblSubjectTypes.TabIndex = 25;
-            this.lblSubjectTypes.Text = "Typ przedmiotu";
             // 
             // InstructorAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 493);
-            this.Controls.Add(this.lblSubjectTypes);
-            this.Controls.Add(this.cbSubjectTypes);
-            this.Controls.Add(this.btnDeleteSubject);
-            this.Controls.Add(this.btnAddSubject);
-            this.Controls.Add(this.lbSubjectsHeader);
-            this.Controls.Add(this.lbSubjects);
-            this.Controls.Add(this.cbSubjects);
-            this.Controls.Add(this.listbSubjects);
+            this.ClientSize = new System.Drawing.Size(476, 285);
             this.Controls.Add(this.btnSaveInstructor);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtRoomNo);
             this.Controls.Add(this.cbDegree);
-            this.Controls.Add(this.txtPhoneTwo);
-            this.Controls.Add(this.lblPhoneTwo);
             this.Controls.Add(this.lblRoomNo);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
@@ -335,22 +223,12 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblRoomNo;
-        private System.Windows.Forms.TextBox txtPhoneTwo;
-        private System.Windows.Forms.Label lblPhoneTwo;
         private System.Windows.Forms.ComboBox cbDegree;
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSaveInstructor;
-        private System.Windows.Forms.ListBox listbSubjects;
-        private System.Windows.Forms.ComboBox cbSubjects;
-        private System.Windows.Forms.Label lbSubjects;
-        private System.Windows.Forms.Label lbSubjectsHeader;
-        private System.Windows.Forms.Button btnAddSubject;
-        private System.Windows.Forms.Button btnDeleteSubject;
         private other_schedule2DataSet other_schedule2DataSet;
         private System.Windows.Forms.BindingSource tbSubjectsBindingSource;
         private other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter tbSubjectsTableAdapter;
-        private System.Windows.Forms.ComboBox cbSubjectTypes;
-        private System.Windows.Forms.Label lblSubjectTypes;
     }
 }

@@ -25,19 +25,19 @@ namespace UniSchedule
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            var scheduleAddWindow = new ScheduleAdd();
-           // mmForm.Close();
 
-            scheduleAddWindow.ShowDialog(); 
+            var scheduleEditWindow = new ScheduleEdit();
+
+            //  mmForm.Close();
+            scheduleEditWindow.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           /* var scheduleEditWindow = new ScheduleEdit();
+            var scheduleEditWindow = new ScheduleEdit();
 
           //  mmForm.Close();
-            scheduleEditWindow.ShowDialog(); */
+            scheduleEditWindow.ShowDialog();
             
         }
 
@@ -56,17 +56,27 @@ namespace UniSchedule
                 var instructorAddForm = new InstructorAdd();
                 instructorAddForm.ShowDialog();
             }
-            else
+            else if(rbSubject.Checked == true)
             {
                 var subjectAddForm = new SubjectAdd();
                 subjectAddForm.ShowDialog();
             }
-
+            else if (rbNewGroup.Checked == true)
+            {
+                var groupAddForm = new GroupAdd();
+                groupAddForm.ShowDialog();
+            }
+            else if (rbNewMeeting.Checked == true)
+            {
+                var meetingAddForm = new MeetingAdd();
+                meetingAddForm.ShowDialog();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -84,6 +94,11 @@ namespace UniSchedule
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbInstructor_CheckedChanged(object sender, EventArgs e)
         {
 
         }

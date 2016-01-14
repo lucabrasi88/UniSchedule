@@ -26,12 +26,12 @@ namespace UniSchedule.ViewForms.AddForms
         private void SubjectAdd_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'other_schedule2DataSet.tbTypesSubjects' table. You can move, or remove it, as needed.
-            this.tbTypesSubjectsTableAdapter.Fill(this.other_schedule2DataSet.tbTypesSubjects);
-            AttachDataToSubjectTypeCB();
+          //  this.tbTypesSubjectsTableAdapter.Fill(this.other_schedule2DataSet.tbTypesSubjects);
+            // AttachDataToSubjectTypeCB();
             
         }
 
-        private void AttachDataToSubjectTypeCB()
+      /*  private void AttachDataToSubjectTypeCB()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connectionString;
@@ -47,34 +47,45 @@ namespace UniSchedule.ViewForms.AddForms
 
             
 
-        }
+        } */
 
         private void btnSaveSubject_Click(object sender, EventArgs e)
         {
-            int subjectId;
+            RestoreValidFields();
 
-            Int32.TryParse(cbSubjectType.Text, out subjectId);
-
-            AddSubjectToDB(txtLongSubjectName.Text, txtShortSubjectName.Text, subjectId);
+            if (ValidateSubjectData())
+            {
+                 AddSubjectToDB(txtLongSubjectName.Text, txtShortSubjectName.Text, txtEnglishName.Text);
+            }
         }
 
-        private void AddSubjectToDB(string subjectName, string subjectShortName, int typeSubjectId)
+        private void AddSubjectToDB(string subjectName, string subjectShortName, string subjectEnglishName)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connectionString;
-            
 
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "AddNewSubject";
-            cmd.Parameters.AddWithValue("@LongName", subjectName);
-            cmd.Parameters.AddWithValue("@ShortName", subjectShortName);
-            cmd.Parameters.AddWithValue("@TypeSubjectId", typeSubjectId);
-            conn.Open();
-            MessageBox.Show("Connection opened");
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Command Executed");
-            conn.Close();
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "AddNewSubject";
+                cmd.Parameters.AddWithValue("@LongNamePl", subjectName);
+                cmd.Parameters.AddWithValue("@ShortName", subjectShortName);
+                cmd.Parameters.AddWithValue("@EnglishName", subjectEnglishName);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Przedmiot zapisano pomyślnie.");
+                conn.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd,. Spróbuj ponownie.");
+            }
+
+            txtLongSubjectName.Clear();
+            txtShortSubjectName.Clear();
+            txtEnglishName.Clear();
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -85,6 +96,40 @@ namespace UniSchedule.ViewForms.AddForms
         private void cbSubjectType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private bool ValidateSubjectData()
+        {
+            bool valid = true;
+
+            if (String.IsNullOrEmpty(txtLongSubjectName.Text.ToString()))
+            {
+                valid = false;
+                txtLongSubjectName.BackColor = Color.Red;
+            }
+
+            if (String.IsNullOrEmpty(txtShortSubjectName.Text.ToString()))
+            {
+                valid = false;
+                txtShortSubjectName.BackColor = Color.Red;
+            }
+
+            if (String.IsNullOrEmpty(txtEnglishName.Text.ToString()))
+            {
+                valid = false;
+                txtEnglishName.BackColor = Color.Red;
+            }
+
+            if (valid == false)
+                MessageBox.Show("Uzupełnij wymagane pola!", "Uwaga!", MessageBoxButtons.OK);
+
+            return valid;
+        }
+
+        private void RestoreValidFields()
+        {
+            txtLongSubjectName.BackColor = Color.White;
+            txtShortSubjectName.BackColor = Color.White;
         }
 
     }

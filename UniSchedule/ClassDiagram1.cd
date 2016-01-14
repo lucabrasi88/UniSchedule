@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UniSchedule.DbScheduleDataContext" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sOYAAAIKOIUAQEkSchQ8IAElE6BABAGIRqggAAAFKiA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.tbClassroom" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgCAwBmAIFgAgAQEFFgAMBjCgQQABAAAAAAACQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbDegree" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAABAAIAAAAAQAFAAQCBjCAABAEAAIAQAAASAiA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbFieldsOfStudy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAABAAAAAAAAwAFAIAQBjCBAQAAAEAAAAAAQQgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbFloor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAFQAAEAAgIQAFAAAABjCBAQAAAFAAAAIAQAgQ=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbGroup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAFECAAAAgEQIFAAAdFnKAIQAAAAAAAIAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbHour" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAggAAABEAAQAAAAQAFEAAMBjCAAQCAAAAAAAAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbInstructor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAziGABCGUABIAARgFAIAQljCFAQgABBEgAIAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbMeeting" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkgAAABEAAAAAAAQAFAAAMBjGAAQAAABAAAAAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbSchedule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAgAAAhCBAAAAAAwCFACYAFjCQEAAAEBAgBgMQWAlE=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbSubject" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAogABABCAEABAAAUAlAAAAhjCBAAMBAAAAAJAAaAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbSubjectsInstructor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAABEAFCKAAAQAFCABMBjDAIUAAAAAgAAAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbTypesClassroom" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgACghQAQAAAAAQAFAAAABjCQAAAAAlAAAAAAQAhA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbTypesSubject" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAAghAAQAgAEAQAFAAAABjSAAAAAAgAAAAAAQAgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.tbYearOfStudy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAABAAAAAAAAwAFAAAABjCBIAAAAEAAACAAUQgA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="UniSchedule.SubIn" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAgAAEABAAAAAAAAAAABAAAAAAAgAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewInstructor" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewSubjectInstructor" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.SearchScheduleInstructorsResult" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAABAgAAEQBAACAMAEAAEABAAAAAQEgAAAAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSet" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8CFZgEACiwABAANkFAAAwACECI5DQBmhhLJkAAEMpBg=</HashCode>
+      <FileName>other_schedule2DataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.Program" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.MainMenu" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAGAAAACgAAAAAAACACAACIEAYAAAAAHAIAAMAIUY=</HashCode>
+      <FileName>ViewForms\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ScheduleEdit" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAwAQACAgARkAABCAIAACAAAASCAADJAYQggAMgA=</HashCode>
+      <FileName>ViewForms\ScheduleEdit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ScheduleView" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAQEZACAAABoAgJCAoDASAABwEAAgACABAAAMCDI=</HashCode>
+      <FileName>ViewForms\ScheduleView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.Logging.LoginForm" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAEAECAEAAgAAQCAAQAKACAAAAACCQAAAgAAAAA=</HashCode>
+      <FileName>Logging\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbTypesSubjectsTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+      <FileName>other_schedule2DataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbClassroomTableAdapter" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbDaysTableAdapter" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbDegreeTableAdapter" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbFieldsOfStudyTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbFloorTableAdapter" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbGroupsTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbHoursTableAdapter" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbInstructorsTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbScheduleTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbSubjectsTableAdapter" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbSubjectsInstructorsTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbTypesClassroomTableAdapter" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.tbYearOfStudyTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.QueriesTableAdapter" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAgAAAIAAAAAEAAQAIBAAAAoAAAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.other_schedule2DataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUQAIjAIABBABAEJAAAIOgIxBAACgIQIgBQAAAAQBhQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.Properties.Settings" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAIgAAAAABgAABAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewForms.AddForms.InstructorAdd" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BSAAkAAAAbiAFTgAAIDBIODCIBAYIoBSgAhEAA2AICY=</HashCode>
+      <FileName>ViewForms\AddForms\InstructorAdd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewForms.AddForms.SubjectAdd" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAESACUAgEAACAAICCECAAQABAABAhAAAAACA=</HashCode>
+      <FileName>ViewForms\AddForms\SubjectAdd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewForms.DeleteForms.InstructorDelete" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAIAAkAAACAAIACAAAACIRAAAAAIAAAAAA=</HashCode>
+      <FileName>ViewForms\DeleteForms\InstructorDelete.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniSchedule.ViewForms.DeleteForms.SubjectDelete" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAABAgAAACAAKACAAAAAIBAAAAAAAgAIAA=</HashCode>
+      <FileName>ViewForms\DeleteForms\SubjectDelete.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

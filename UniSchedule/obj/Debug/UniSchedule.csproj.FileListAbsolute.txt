@@ -11,11 +11,14 @@ C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\D
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\EntityFramework.xml
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ScheduleAdd.resources
-C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\other_schedule2.mdf
-C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\bin\Debug\other_schedule2_log.ldf
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ScheduleView.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.InstructorAdd.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.SubjectAdd.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.DeleteForms.InstructorDelete.resources
 C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.DeleteForms.SubjectDelete.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.Logging.LoginForm.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.StudentForms.StudentMenu.resources
+C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.GroupAdd.resources
+C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.InsSubAdd.resources
+C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.MeetingAdd.resources
+C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.StudentForms.PasswordChange.resources

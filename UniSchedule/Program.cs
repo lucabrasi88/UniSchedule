@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UniSchedule.Logging;
+using UniSchedule.ViewForms.AddForms;
+using UniSchedule.ViewForms.DeleteForms;
 
 namespace UniSchedule
 {
@@ -16,7 +19,12 @@ namespace UniSchedule
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+
+            InstructorDelete frmLogin = new InstructorDelete();
+            frmLogin.Show();
+
+            Application.Run();
+            // Application.Run(new LoginForm());
         }
     }
 }

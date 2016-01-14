@@ -60,6 +60,7 @@
             this.cbInstructors.Name = "cbInstructors";
             this.cbInstructors.Size = new System.Drawing.Size(183, 21);
             this.cbInstructors.TabIndex = 3;
+            this.cbInstructors.SelectedIndexChanged += new System.EventHandler(this.cbInstructors_SelectedIndexChanged);
             // 
             // InstructorDelete
             // 

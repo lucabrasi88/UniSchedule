@@ -39,11 +39,15 @@ namespace UniSchedule.ViewForms.DeleteForms
             conn.ConnectionString = connectionString;
             conn.Open();
 
-            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT Name, Surname FROM tbInstructors", conn);
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM [ViewInstructors]", conn);
             dsInstructors = new DataSet();
-            daSearch.Fill(dsInstructors, "daSearch");
-            cbInstructors.ValueMember = "Surname";
-            cbInstructors.DataSource = dsInstructors.Tables["daSearch"];
+            daSearch.Fill(dsInstructors, "daInstructors");
+            dt = dsInstructors.Tables["daInstructors"];
+            cbInstructors.ValueMember = "id";
+            cbInstructors.DisplayMember = "Text";
+            cbInstructors.DataSource = dt;
             cbInstructors.DropDownStyle = ComboBoxStyle.DropDownList;
             cbInstructors.Enabled = true;
             conn.Close();
@@ -52,21 +56,57 @@ namespace UniSchedule.ViewForms.DeleteForms
 
         private void btnDeleteInstructor_Click(object sender, EventArgs e)
         {
-           /* SqlConnection conn = new SqlConnection();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = connectionString;
+
+            try
+            {
+                SqlCommand comm;
+
+                DataRow row = ((DataTable)cbInstructors.DataSource).Rows[cbInstructors.SelectedIndex];
+                int Id = (int)row["id"];
+
+                comm = new SqlCommand("DellInstructorsAndSubjectInstructor", con);
+                comm.Parameters.AddWithValue("@IdInstructor", Id.ToString());
+                comm.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                comm.ExecuteNonQuery();
+                MessageBox.Show("Usunięto wykładowcę!");
+                con.Close();
+            }
+
+            catch
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd. Spróbuj ponownie.");
+            }
+
+        }
+
+        private void AttachDataToFieldId()
+        {
+            SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connectionString;
-
-
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "DeleteInstructor";
-            cmd.Parameters.AddWithValue("@LongName", cbSubjects.Text.ToString());
             conn.Open();
-            MessageBox.Show("Connection opened");
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Command Executed");
-            AttachDataToInstructorsList()
-            cbInstructors.Refresh();
-            conn.Close(); */
+
+            DataTable dt = new DataTable();
+            DataSet dsField = new DataSet();
+
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT id, Name FROM tbFieldsOfStudy", conn);
+
+            daSearch.Fill(dsField, "fieldTable");
+            dt = dsField.Tables["fieldTable"];
+            cbInstructors.ValueMember = "id";
+            cbInstructors.DisplayMember = "Name";
+            // cbDegree.DataSource = dsDegreeId.Tables["daSearch"];
+            cbInstructors.DataSource = dt;
+            cbInstructors.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbInstructors.Enabled = true;
+        }
+
+        private void cbInstructors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
