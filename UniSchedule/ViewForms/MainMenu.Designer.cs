@@ -32,15 +32,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.gbAdding = new System.Windows.Forms.GroupBox();
+            this.rbInsToSub = new System.Windows.Forms.RadioButton();
+            this.rbNewGroup = new System.Windows.Forms.RadioButton();
+            this.rbNewMeeting = new System.Windows.Forms.RadioButton();
             this.btnAddNewItem = new System.Windows.Forms.Button();
             this.rbInstructor = new System.Windows.Forms.RadioButton();
             this.rbSubject = new System.Windows.Forms.RadioButton();
             this.gbDeleting = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.rbDeleteInstructorChoice = new System.Windows.Forms.RadioButton();
-            this.rbNewMeeting = new System.Windows.Forms.RadioButton();
-            this.rbNewGroup = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbSubToSubType = new System.Windows.Forms.RadioButton();
             this.gbAdding.SuspendLayout();
             this.gbDeleting.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +78,8 @@
             // 
             // gbAdding
             // 
-            this.gbAdding.Controls.Add(this.radioButton1);
+            this.gbAdding.Controls.Add(this.rbSubToSubType);
+            this.gbAdding.Controls.Add(this.rbInsToSub);
             this.gbAdding.Controls.Add(this.rbNewGroup);
             this.gbAdding.Controls.Add(this.rbNewMeeting);
             this.gbAdding.Controls.Add(this.btnAddNewItem);
@@ -85,14 +87,47 @@
             this.gbAdding.Controls.Add(this.rbSubject);
             this.gbAdding.Location = new System.Drawing.Point(312, 71);
             this.gbAdding.Name = "gbAdding";
-            this.gbAdding.Size = new System.Drawing.Size(172, 205);
+            this.gbAdding.Size = new System.Drawing.Size(172, 233);
             this.gbAdding.TabIndex = 4;
             this.gbAdding.TabStop = false;
             this.gbAdding.Text = "Szybkie dodawanie";
             // 
+            // rbInsToSub
+            // 
+            this.rbInsToSub.AutoSize = true;
+            this.rbInsToSub.Location = new System.Drawing.Point(19, 138);
+            this.rbInsToSub.Name = "rbInsToSub";
+            this.rbInsToSub.Size = new System.Drawing.Size(143, 17);
+            this.rbInsToSub.TabIndex = 5;
+            this.rbInsToSub.TabStop = true;
+            this.rbInsToSub.Text = "Wykładowca - przedmiot";
+            this.rbInsToSub.UseVisualStyleBackColor = true;
+            // 
+            // rbNewGroup
+            // 
+            this.rbNewGroup.AutoSize = true;
+            this.rbNewGroup.Location = new System.Drawing.Point(19, 115);
+            this.rbNewGroup.Name = "rbNewGroup";
+            this.rbNewGroup.Size = new System.Drawing.Size(83, 17);
+            this.rbNewGroup.TabIndex = 4;
+            this.rbNewGroup.TabStop = true;
+            this.rbNewGroup.Text = "Nowa grupa";
+            this.rbNewGroup.UseVisualStyleBackColor = true;
+            // 
+            // rbNewMeeting
+            // 
+            this.rbNewMeeting.AutoSize = true;
+            this.rbNewMeeting.Location = new System.Drawing.Point(19, 92);
+            this.rbNewMeeting.Name = "rbNewMeeting";
+            this.rbNewMeeting.Size = new System.Drawing.Size(79, 17);
+            this.rbNewMeeting.TabIndex = 3;
+            this.rbNewMeeting.TabStop = true;
+            this.rbNewMeeting.Text = "Nowy zjazd";
+            this.rbNewMeeting.UseVisualStyleBackColor = true;
+            // 
             // btnAddNewItem
             // 
-            this.btnAddNewItem.Location = new System.Drawing.Point(19, 165);
+            this.btnAddNewItem.Location = new System.Drawing.Point(19, 190);
             this.btnAddNewItem.Name = "btnAddNewItem";
             this.btnAddNewItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddNewItem.TabIndex = 2;
@@ -155,38 +190,16 @@
             this.rbDeleteInstructorChoice.Text = "Usuń wykładowcę";
             this.rbDeleteInstructorChoice.UseVisualStyleBackColor = true;
             // 
-            // rbNewMeeting
+            // rbSubToSubType
             // 
-            this.rbNewMeeting.AutoSize = true;
-            this.rbNewMeeting.Location = new System.Drawing.Point(19, 92);
-            this.rbNewMeeting.Name = "rbNewMeeting";
-            this.rbNewMeeting.Size = new System.Drawing.Size(79, 17);
-            this.rbNewMeeting.TabIndex = 3;
-            this.rbNewMeeting.TabStop = true;
-            this.rbNewMeeting.Text = "Nowy zjazd";
-            this.rbNewMeeting.UseVisualStyleBackColor = true;
-            // 
-            // rbNewGroup
-            // 
-            this.rbNewGroup.AutoSize = true;
-            this.rbNewGroup.Location = new System.Drawing.Point(19, 115);
-            this.rbNewGroup.Name = "rbNewGroup";
-            this.rbNewGroup.Size = new System.Drawing.Size(83, 17);
-            this.rbNewGroup.TabIndex = 4;
-            this.rbNewGroup.TabStop = true;
-            this.rbNewGroup.Text = "Nowa grupa";
-            this.rbNewGroup.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(19, 138);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(143, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Wykładowca - przedmiot";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbSubToSubType.AutoSize = true;
+            this.rbSubToSubType.Location = new System.Drawing.Point(19, 161);
+            this.rbSubToSubType.Name = "rbSubToSubType";
+            this.rbSubToSubType.Size = new System.Drawing.Size(148, 17);
+            this.rbSubToSubType.TabIndex = 6;
+            this.rbSubToSubType.TabStop = true;
+            this.rbSubToSubType.Text = "Przedmiot - typ przedmiotu";
+            this.rbSubToSubType.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
@@ -223,7 +236,8 @@
         private System.Windows.Forms.RadioButton rbDeleteInstructorChoice;
         private System.Windows.Forms.RadioButton rbNewGroup;
         private System.Windows.Forms.RadioButton rbNewMeeting;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbInsToSub;
+        private System.Windows.Forms.RadioButton rbSubToSubType;
     }
 }
 

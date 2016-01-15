@@ -29,13 +29,14 @@ namespace UniSchedule.Helpers
         private string mailSender = "schedulemessenger@gmail.com";
         private string senderPass = "admin123WMI";
 
+
         public void SendMailAfterRegistration(string address, string userName, string password)
         {
             MailMessage mailMessage = new MailMessage();
             mailMessage.To.Add(address);
             mailMessage.From = new MailAddress(mailSender);
             mailMessage.Subject = "Aktywacja konta";
-            mailMessage.Body = "Witaj " + userName + ". " + "Twoje konto zostało aktywowane. Twoje hasło do systemu to: " + password;
+            mailMessage.Body = "Witaj " + userName + ". " + "Twoje hasło zostało zmienione. Twoje hasło do systemu to: " + password;
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.Credentials = new NetworkCredential(mailSender, senderPass);
 

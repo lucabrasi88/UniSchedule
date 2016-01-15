@@ -14,7 +14,7 @@ namespace UniSchedule.ViewForms.StudentForms
     {
         public string login = String.Empty;
         public string pass = String.Empty;
-        public string email = String.Empty;
+        
 
 
         public StudentMenu()
@@ -22,11 +22,12 @@ namespace UniSchedule.ViewForms.StudentForms
             InitializeComponent();
         }
 
-        public StudentMenu(string _login, string _pass, string _email)
+        public StudentMenu(string _login, string _pass)
         {
             this.login = _login;
             this.pass = _pass;
-            this.email = _email;
+            InitializeComponent();
+            
         }
 
         private void btnSearchForm_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace UniSchedule.ViewForms.StudentForms
 
         private void btnPassChange_Click(object sender, EventArgs e)
         {
-            var passChangeWindow = new PasswordChange();
+            var passChangeWindow = new PasswordChange(login, pass);
 
 
             passChangeWindow.ShowDialog();

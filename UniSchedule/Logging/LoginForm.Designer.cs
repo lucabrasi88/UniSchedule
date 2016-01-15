@@ -57,6 +57,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(93, 62);
+            this.txtLogin.MaxLength = 50;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(214, 20);
             this.txtLogin.TabIndex = 2;
@@ -64,6 +65,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(93, 97);
+            this.txtPass.MaxLength = 100;
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(214, 20);
             this.txtPass.TabIndex = 3;

@@ -83,7 +83,7 @@ namespace UniSchedule.ViewForms.AddForms
 
             catch
             {
-                MessageBox.Show("Wystąpił nieoczekiwany błąd. Spróbuj ponownie.");
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
             }
 
             finally
@@ -257,6 +257,11 @@ namespace UniSchedule.ViewForms.AddForms
             txtEmail.BackColor = Color.White;
             txtPhoneOne.BackColor = Color.White;
             txtRoomNo.BackColor = Color.White;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

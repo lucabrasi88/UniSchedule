@@ -134,13 +134,12 @@ namespace UniSchedule
             da.SelectCommand = cmd;
             da.Fill(ds, "myTable");
             dt = ds.Tables["myTable"];
-            MessageBox.Show("Procedura rozpoczęta");
             cmd.ExecuteNonQuery();
             foreach (DataRow row in dt.Rows)
             {
                 listBox1.Items.Add(row["Date"].ToString() + " - " + row["Hours"].ToString() + " - " + row["Name Groups"].ToString() + " - " + row["Subject"].ToString() + " - " + row["Type subject"].ToString() + " - " + row["Surname"].ToString() + " - " + row["Field of study"].ToString());
             }
-            MessageBox.Show("Zapis zakończony powodzeniem!");
+            
            // listBox1.DataSource = dt;
             
             cmd.Dispose();

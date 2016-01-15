@@ -20,7 +20,7 @@ namespace UniSchedule
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            InstructorDelete frmLogin = new InstructorDelete();
+            LoginForm frmLogin = new LoginForm();
             frmLogin.Show();
 
             Application.Run();

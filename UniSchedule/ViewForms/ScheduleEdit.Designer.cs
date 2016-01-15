@@ -56,7 +56,7 @@
             this.cbHour.FormattingEnabled = true;
             this.cbHour.Location = new System.Drawing.Point(109, 108);
             this.cbHour.Name = "cbHour";
-            this.cbHour.Size = new System.Drawing.Size(91, 21);
+            this.cbHour.Size = new System.Drawing.Size(106, 21);
             this.cbHour.TabIndex = 3;
             // 
             // cbDay
@@ -64,8 +64,9 @@
             this.cbDay.FormattingEnabled = true;
             this.cbDay.Location = new System.Drawing.Point(109, 66);
             this.cbDay.Name = "cbDay";
-            this.cbDay.Size = new System.Drawing.Size(121, 21);
+            this.cbDay.Size = new System.Drawing.Size(159, 21);
             this.cbDay.TabIndex = 4;
+            this.cbDay.SelectedIndexChanged += new System.EventHandler(this.cbDay_SelectedIndexChanged);
             // 
             // cbSubject
             // 
@@ -145,9 +146,8 @@
             this.cbGroupName.FormattingEnabled = true;
             this.cbGroupName.Location = new System.Drawing.Point(109, 32);
             this.cbGroupName.Name = "cbGroupName";
-            this.cbGroupName.Size = new System.Drawing.Size(121, 21);
+            this.cbGroupName.Size = new System.Drawing.Size(159, 21);
             this.cbGroupName.TabIndex = 18;
-            this.cbGroupName.Visible = false;
             this.cbGroupName.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ScheduleEdit

@@ -71,6 +71,18 @@ namespace UniSchedule
                 var meetingAddForm = new MeetingAdd();
                 meetingAddForm.ShowDialog();
             }
+
+            else if (rbSubToSubType.Checked == true)
+            {
+                var subToSubTypeAddForm = new SubToSubTypeAdd();
+                subToSubTypeAddForm.ShowDialog();
+            }
+
+            else if (rbInsToSub.Checked == true)
+            {
+                var insSubAddForm = new InsSubAdd();
+                insSubAddForm.ShowDialog();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

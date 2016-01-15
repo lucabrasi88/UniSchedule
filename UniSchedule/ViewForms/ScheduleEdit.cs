@@ -16,11 +16,14 @@ namespace UniSchedule
     {
 
         private DataSet dsHours;
-        private DataSet dsSubjects;
+        private DataSet dsInsSub;
         private DataSet dsInstructors;
+        private DataSet dsGroupNames;
+        private DataSet dsClassrooms;
+        private DataSet dsMeetings;
         private static string connectionString = ConfigurationManager.ConnectionStrings["UniScheduleDB"].ConnectionString;
-
-        public static ScheduleEdit SEInstance;
+        SqlConnection conn = new SqlConnection(connectionString);
+            
         public ScheduleEdit()
         {
             
@@ -46,8 +49,12 @@ namespace UniSchedule
 
         private void ScheduleEdit_Load(object sender, EventArgs e)
         {
-            LoadSubjectsHours();
-            LoadSubjects();
+            AttachDataToClassrooms();
+            AttachDataToGroupName();
+            AttachDataToHours();
+            AttachDataToInsSub();
+            AttachDataToMeetings();
+            
 
            // SetControlsVisibility();
 
@@ -99,62 +106,12 @@ namespace UniSchedule
 
         private void cbSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string subjectName = cbSubject.SelectedItem.ToString();
-
-            StringBuilder getSubjectIdBySubjectNameQuery = new StringBuilder("SELECT id FROM tbSubjects WHERE LongName =");
-            getSubjectIdBySubjectNameQuery.Append(subjectName);
+            
             
 
 
         }
 
-        private void LoadSubjectsHours()
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-
-            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT Hours_ FROM tbHours", conn);
-            dsHours = new DataSet();
-            daSearch.Fill(dsHours, "daSearch");
-            cbHour.ValueMember = "Hours_";
-            cbHour.DataSource = dsHours.Tables["daSearch"];
-            cbHour.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbHour.Enabled = true;
-            conn.Close();
-        }
-
-        private void LoadSubjects()
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-
-            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT LongNamePl FROM tbSubjects", conn);
-            dsSubjects = new DataSet();
-            daSearch.Fill(dsSubjects, "daSearch");
-            cbSubject.ValueMember = "LongName";
-            cbSubject.DataSource = dsSubjects.Tables["daSearch"];
-            cbSubject.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbSubject.Enabled = true;
-            conn.Close();
-        }
-
-        private void LoadInstructors()
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = connectionString;
-            conn.Open();
-
-            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT LongName FROM tbSubjects", conn);
-            dsSubjects = new DataSet();
-            daSearch.Fill(dsSubjects, "daSearch");
-            cbSubject.ValueMember = "LongName";
-            cbSubject.DataSource = dsSubjects.Tables["daSearch"];
-            cbSubject.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbSubject.Enabled = true;
-            conn.Close();
-        }
 
        /* private void LoadInstructorDependedOnSubject(int instructorId)
         {
@@ -181,6 +138,101 @@ namespace UniSchedule
         }
 
         private void btnAddToSchedule_Click(object sender, EventArgs e)
+        {
+
+            SqlCommand comm = new SqlCommand("AddNewSchedule", conn);
+            comm.Parameters.AddWithValue("@ClassroomId", cbClassroom.Text.ToString());
+            comm.Parameters.AddWithValue("@GroupsId", cbClassroom.Text.ToString());
+            comm.Parameters.AddWithValue("@HoursId", cbClassroom.Text.ToString());
+            comm.Parameters.AddWithValue("@MeetingsId", cbClassroom.Text.ToString());
+            comm.Parameters.AddWithValue("@SubInstId ", cbClassroom.Text.ToString());
+            comm.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            comm.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        private void AttachDataToHours()
+        {
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM tbHours", conn);
+            dsHours = new DataSet();
+            daSearch.Fill(dsHours, "daHours");
+            cbHour.ValueMember = "id";
+            cbHour.DisplayMember = "Hours_";
+            cbHour.DataSource = dsHours.Tables["daHours"];
+            cbHour.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbHour.Enabled = true;
+            conn.Close();
+        
+        }
+
+        private void AttachDataToGroupName()
+        {
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM [ViewGroups]", conn);
+            dsGroupNames = new DataSet();
+            daSearch.Fill(dsGroupNames, "daGroupNames");
+            cbGroupName.ValueMember = "id";
+            cbGroupName.DisplayMember = "Text";
+            cbGroupName.DataSource = dsGroupNames.Tables["daGroupNames"];
+            cbGroupName.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbGroupName.Enabled = true;
+            conn.Close();
+
+        }
+
+        private void AttachDataToClassrooms()
+        {
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM tbClassroom", conn);
+            dsClassrooms = new DataSet();
+            daSearch.Fill(dsClassrooms, "daClassrooms");
+            cbClassroom.ValueMember = "id";
+            cbClassroom.DisplayMember = "Number";
+            cbClassroom.DataSource = dsClassrooms.Tables["daClassrooms"];
+            cbClassroom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbClassroom.Enabled = true;
+            conn.Close();
+
+        }
+
+        private void AttachDataToMeetings()
+        {
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM [ViewMeetings]", conn);
+            dsMeetings = new DataSet();
+            daSearch.Fill(dsMeetings, "daMeetings");
+            cbDay.ValueMember = "id";
+            cbDay.DisplayMember = "Date";
+            cbDay.DataSource = dsMeetings.Tables["daMeetings"];
+            cbDay.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbDay.Enabled = true;
+            conn.Close();
+
+        }
+
+        private void AttachDataToInsSub()
+        {
+            conn.Open();
+
+            SqlDataAdapter daSearch = new SqlDataAdapter("SELECT * FROM [ViewInsSubj]", conn);
+            dsInsSub = new DataSet();
+            daSearch.Fill(dsInsSub, "daInsSub");
+            cbSubject.ValueMember = "id";
+            cbSubject.DisplayMember = "Text";
+            cbSubject.DataSource = dsInsSub.Tables["daInsSub"];
+            cbSubject.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSubject.Enabled = true;
+            conn.Close();
+
+        }
+
+        private void cbDay_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

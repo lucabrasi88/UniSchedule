@@ -43,7 +43,7 @@ namespace UniSchedule.Logging
         private void InitializePassTextBox()
         {
             txtPass.PasswordChar = '*';
-            txtPass.MaxLength = 15;
+            txtPass.MaxLength = 100;
         }
 
         private void ValidateUser(string login, string password)
@@ -79,40 +79,38 @@ namespace UniSchedule.Logging
             this.comm.Parameters.AddWithValue("@PasswordUser", password);
             this.comm.CommandType = CommandType.StoredProcedure;
             con.Open();
+            SqlParameter returnParameter = comm.Parameters.Add("@IsTrue", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
             comm.ExecuteNonQuery();
+            int isTrue = (int)returnParameter.Value;
 
-            SqlParameter parametr = new SqlParameter();
-            object flag = comm.ExecuteScalar();
-            int? zm = Convert.ToInt32(flag);
-
-            SqlDataReader sqldr = comm.ExecuteReader();
-            if (zm == 1)
+            if (isTrue == 1 && login == "NameUserAdmin")
             {
-                if (login == "NameUserAdmin")
-                {
                     this.Close();
                     MainMenu mm = new MainMenu();
                     mm.ShowDialog();
-                }
+             }
 
-                else
-                {
-                    this.Close();
-                    StudentMenu sm = new StudentMenu();
-                    sm.ShowDialog();
-                }
-            }
-            else if (zm == 0)
+            else if (isTrue == 0)
             {
                 MessageBox.Show("Brak użytkownika o takich danych!");
 
             }
 
+            else
+            {
+             this.Close();
+             StudentMenu sm = new StudentMenu(login, password);
+             sm.ShowDialog();
+            }
+            
+            
+
             con.Close();
             
         }
 
-        public string PassEncryption(String password)
+     /*   public string PassEncryption(String password)
         {
             MD5CryptoServiceProvider encryptionProvider = new MD5CryptoServiceProvider();
             byte[] encrypt;
@@ -126,9 +124,9 @@ namespace UniSchedule.Logging
                 encryptdata.Append(encrypt[i].ToString());
             }
             return encryptdata.ToString();
-        } 
+        }  */
 
-        private void AddNewUser(string login, string password)
+    /*    private void AddNewUser(string login, string password)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = connectionString;
@@ -145,7 +143,7 @@ namespace UniSchedule.Logging
             cmd.ExecuteNonQuery();
             MessageBox.Show("Zapis użytkownika zakończony powodzeniem!");
             conn.Close();
-        }
+        } */
 
         private void LoginForm_Load(object sender, EventArgs e)
         {

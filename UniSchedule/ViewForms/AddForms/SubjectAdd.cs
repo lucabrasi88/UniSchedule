@@ -79,7 +79,7 @@ namespace UniSchedule.ViewForms.AddForms
             }
             catch
             {
-                MessageBox.Show("Wystąpił nieoczekiwany błąd,. Spróbuj ponownie.");
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
             }
 
             txtLongSubjectName.Clear();

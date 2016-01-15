@@ -121,6 +121,12 @@
     <Compile Include="ViewForms\AddForms\SubjectAdd.Designer.cs">
       <DependentUpon>SubjectAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForms\AddForms\SubToSubTypeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForms\AddForms\SubToSubTypeAdd.Designer.cs">
+      <DependentUpon>SubToSubTypeAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewForms\DeleteForms\InstructorDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\AddForms\MeetingAdd.resx">
       <DependentUpon>MeetingAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForms\AddForms\SubToSubTypeAdd.resx">
+      <DependentUpon>SubToSubTypeAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewForms\StudentForms\PasswordChange.resx">
       <DependentUpon>PasswordChange.cs</DependentUpon>

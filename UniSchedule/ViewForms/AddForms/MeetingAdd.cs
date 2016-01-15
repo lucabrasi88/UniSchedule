@@ -31,18 +31,29 @@ namespace UniSchedule.ViewForms.AddForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-           try
-           {
-                comm = new SqlCommand("AddDateMeetings", con);
-                this.comm.Parameters.AddWithValue("@Date", dtpMeeting.Value);
-                this.comm.CommandType = CommandType.StoredProcedure;
+       
+            try
+            {
+                
+
+                comm = new SqlCommand("ValidationMeetings", con);
+                comm.Parameters.AddWithValue("@Date", dtpMeeting.Value.Date);
+                comm.CommandType = CommandType.StoredProcedure;
                 con.Open();
+                SqlParameter returnParameter = comm.Parameters.Add("@Error", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
                 comm.ExecuteNonQuery();
+                int id = (int)returnParameter.Value;
+
+                if (id == 1)
+                    MessageBox.Show("Podana data już istnieje w bazie danych!");
+                else MessageBox.Show("Data zapisana poprawnie!");
+
                 con.Close();
             }
             catch
             {
-                MessageBox.Show("Wystąpił nieoczekiwany błąd. Spróbuj ponownie");
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
             }
         }
     }

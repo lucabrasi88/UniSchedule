@@ -35,17 +35,22 @@ namespace UniSchedule.ViewForms.AddForms
             {
                 List<string> fosData = GetAllFieldsOfStudiesData();
 
-                if(!fosData.Any(x => String.IsNullOrEmpty(x)))
+                if (!fosData.Any(x => String.IsNullOrEmpty(x)))
                 {
-                    comm = new SqlCommand("AddNewGroup", con);
-                    this.comm.Parameters.AddWithValue("@NameGroup", fosData[0]);
-                    this.comm.Parameters.AddWithValue("@IdFieldsOfStudy", fosData[1]);
-                    this.comm.Parameters.AddWithValue("@IdYearOfStudy", fosData[2]);
+                    comm = new SqlCommand("ValidationGroups", con);
+                    this.comm.Parameters.AddWithValue("@Groups", fosData[0]);
+                    this.comm.Parameters.AddWithValue("@IdField", fosData[1]);
+                    this.comm.Parameters.AddWithValue("@IdYear", fosData[2]);
                     this.comm.CommandType = CommandType.StoredProcedure;
                     con.Open();
+                    SqlParameter returnParameter = comm.Parameters.Add("@Error", SqlDbType.Int);
+                    returnParameter.Direction = ParameterDirection.ReturnValue;
                     comm.ExecuteNonQuery();
-                    MessageBox.Show("Grupa została dodana pomyślnie!");
-                    con.Close();
+                    int id = (int)returnParameter.Value;
+
+                    if (id == 1)
+                        MessageBox.Show("Podana data już istnieje w bazie danych!");
+                    else MessageBox.Show("Data zapisana poprawnie!");
                 }
 
                 else MessageBox.Show("Przed zapisem wypełnij wszystkie pola!");
@@ -53,7 +58,12 @@ namespace UniSchedule.ViewForms.AddForms
             }
             catch
             {
-                MessageBox.Show("Wystąpił nieoczekiwany błąd. Spróbuj ponownie.");
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
+            }
+
+            finally
+            {
+                con.Close();
             }
         }
 

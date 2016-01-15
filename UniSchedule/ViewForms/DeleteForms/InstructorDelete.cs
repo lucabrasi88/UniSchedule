@@ -77,7 +77,7 @@ namespace UniSchedule.ViewForms.DeleteForms
 
             catch
             {
-                MessageBox.Show("Wystąpił nieoczekiwany błąd. Spróbuj ponownie.");
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
             }
 
         }

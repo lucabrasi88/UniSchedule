@@ -44,6 +44,7 @@
             this.btnSaveNewPass.TabIndex = 0;
             this.btnSaveNewPass.Text = "Zapisz";
             this.btnSaveNewPass.UseVisualStyleBackColor = true;
+            this.btnSaveNewPass.Click += new System.EventHandler(this.btnSaveNewPass_Click);
             // 
             // lblCurrent
             // 
@@ -60,6 +61,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(149, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -85,6 +87,7 @@
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Powrót";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // PasswordChange
             // 
@@ -99,6 +102,7 @@
             this.Controls.Add(this.btnSaveNewPass);
             this.Name = "PasswordChange";
             this.Text = "PasswordChange";
+            this.Load += new System.EventHandler(this.PasswordChange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

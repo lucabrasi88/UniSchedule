@@ -22,3 +22,5 @@ C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\D
 C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.InsSubAdd.resources
 C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.MeetingAdd.resources
 C:\Users\Luk\Documents\Visual Studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.StudentForms.PasswordChange.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.ViewForms.AddForms.SubToSubTypeAdd.resources
+C:\Users\Luk\documents\visual studio 2012\Projects\UniSchedule\UniSchedule\obj\Debug\UniSchedule.csprojResolveAssemblyReference.cache
