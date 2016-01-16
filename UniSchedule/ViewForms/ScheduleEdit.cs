@@ -139,17 +139,51 @@ namespace UniSchedule
 
         private void btnAddToSchedule_Click(object sender, EventArgs e)
         {
+            DataRow rowClassroom = ((DataTable)cbClassroom.DataSource).Rows[cbClassroom.SelectedIndex];
+            int classroomId = (int)rowClassroom["id"];
+            DataRow rowGroup = ((DataTable)cbGroupName.DataSource).Rows[cbGroupName.SelectedIndex];
+            int groupId = (int)rowGroup["id"];
+            DataRow rowHour = ((DataTable)cbHour.DataSource).Rows[cbHour.SelectedIndex];
+            int hourId = (int)rowHour["id"];
+            DataRow rowMeeting = ((DataTable)cbDay.DataSource).Rows[cbDay.SelectedIndex];
+            int meetingId = (int)rowMeeting["id"];
+            DataRow rowSubInst = ((DataTable)cbSubject.DataSource).Rows[cbSubject.SelectedIndex];
+            int subjectId = (int)rowSubInst["id"];
 
-            SqlCommand comm = new SqlCommand("AddNewSchedule", conn);
-            comm.Parameters.AddWithValue("@ClassroomId", cbClassroom.Text.ToString());
-            comm.Parameters.AddWithValue("@GroupsId", cbClassroom.Text.ToString());
-            comm.Parameters.AddWithValue("@HoursId", cbClassroom.Text.ToString());
-            comm.Parameters.AddWithValue("@MeetingsId", cbClassroom.Text.ToString());
-            comm.Parameters.AddWithValue("@SubInstId ", cbClassroom.Text.ToString());
-            comm.CommandType = CommandType.StoredProcedure;
-            conn.Open();
-            comm.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                SqlCommand comm = new SqlCommand("ValidationSchedule", conn);
+                comm.Parameters.AddWithValue("@ClassroomId", classroomId.ToString());
+                comm.Parameters.AddWithValue("@GroupsId", groupId.ToString());
+                comm.Parameters.AddWithValue("@HoursId", hourId.ToString());
+                comm.Parameters.AddWithValue("@MeetingsId", meetingId.ToString());
+                comm.Parameters.AddWithValue("@SubInstId ", subjectId.ToString());
+                comm.CommandType = CommandType.StoredProcedure;
+                conn.Open();
+                SqlParameter returnParameter = comm.Parameters.Add("@Variable", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+                comm.ExecuteNonQuery();
+                int id = (int)returnParameter.Value;
+
+                    if (id == 0)
+                        MessageBox.Show("Wykładowca ma już zajęcia o tej godzinie!");
+                    else if(id == 2)
+                        MessageBox.Show("Nie można zapisać! Istnieje już taka pozycja w systemie.");
+                    else if(id == 3)
+                        MessageBox.Show("Sala już jest zajęta o tej godzinie!");
+                    else if(id == 1)
+                        MessageBox.Show("Zapisano pomyślnie!");
+            }
+
+            catch
+            {
+                MessageBox.Show("Wystąpił nieoczekiwany błąd!");
+            }
+
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void AttachDataToHours()

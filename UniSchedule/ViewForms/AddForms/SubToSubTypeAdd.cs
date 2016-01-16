@@ -42,12 +42,12 @@ namespace UniSchedule.ViewForms.AddForms
                 comm.Parameters.AddWithValue("@idTypesSubject", subjectTypeId);
                 comm.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                SqlParameter returnParameter = comm.Parameters.Add("@Error", SqlDbType.Int);
+                SqlParameter returnParameter = comm.Parameters.Add("@Variable", SqlDbType.Int);
                 returnParameter.Direction = ParameterDirection.ReturnValue;
                 comm.ExecuteNonQuery();
                 int id = (int)returnParameter.Value;
 
-                if (id == 1)
+                if (id == 0)
                     MessageBox.Show("Wiązanie już istnieje w bazie danych!");
                 else MessageBox.Show("Zapisano poprawnie!");
             }
@@ -110,6 +110,11 @@ namespace UniSchedule.ViewForms.AddForms
         private void cbSubjectType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace UniSchedule.Helpers
             mailMessage.To.Add(address);
             mailMessage.From = new MailAddress(mailSender);
             mailMessage.Subject = "Aktywacja konta";
-            mailMessage.Body = "Witaj " + userName + ". " + "Twoje hasło zostało zmienione. Twoje hasło do systemu to: " + password;
+            mailMessage.Body = "Witaj " + userName + ". " + "Twoje hasło do systemu to: " + password;
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.Credentials = new NetworkCredential(mailSender, senderPass);
 

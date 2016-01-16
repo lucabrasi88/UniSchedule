@@ -130,6 +130,7 @@ namespace UniSchedule.ViewForms.AddForms
         {
             txtLongSubjectName.BackColor = Color.White;
             txtShortSubjectName.BackColor = Color.White;
+            txtEnglishName.BackColor = Color.White;
         }
 
     }

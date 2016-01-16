@@ -137,9 +137,11 @@ namespace UniSchedule
             cmd.ExecuteNonQuery();
             foreach (DataRow row in dt.Rows)
             {
-                listBox1.Items.Add(row["Date"].ToString() + " - " + row["Hours"].ToString() + " - " + row["Name Groups"].ToString() + " - " + row["Subject"].ToString() + " - " + row["Type subject"].ToString() + " - " + row["Surname"].ToString() + " - " + row["Field of study"].ToString());
+                listBox1.Items.Add(row["Data"].ToString() + " - " + row["Godzina"].ToString() + " - " + row["Grupa"].ToString() + " - " + row["Przedmiot"].ToString() + " - " + row["Typ przedmiotu"].ToString() + " - " + row["Nazwisko"].ToString() + " - " + row["Kierunek"].ToString());
             }
-            
+
+            if (dt.Rows.Count == 0)
+                MessageBox.Show("Brak wyników!");
            // listBox1.DataSource = dt;
             
             cmd.Dispose();

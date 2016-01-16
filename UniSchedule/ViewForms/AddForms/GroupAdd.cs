@@ -43,14 +43,14 @@ namespace UniSchedule.ViewForms.AddForms
                     this.comm.Parameters.AddWithValue("@IdYear", fosData[2]);
                     this.comm.CommandType = CommandType.StoredProcedure;
                     con.Open();
-                    SqlParameter returnParameter = comm.Parameters.Add("@Error", SqlDbType.Int);
+                    SqlParameter returnParameter = comm.Parameters.Add("@Variable", SqlDbType.Int);
                     returnParameter.Direction = ParameterDirection.ReturnValue;
                     comm.ExecuteNonQuery();
                     int id = (int)returnParameter.Value;
 
-                    if (id == 1)
-                        MessageBox.Show("Podana data już istnieje w bazie danych!");
-                    else MessageBox.Show("Data zapisana poprawnie!");
+                    if (id == 0)
+                        MessageBox.Show("Podana grupa już istnieje w bazie danych!");
+                    else MessageBox.Show("Grupa zapisana poprawnie!");
                 }
 
                 else MessageBox.Show("Przed zapisem wypełnij wszystkie pola!");
@@ -130,6 +130,11 @@ namespace UniSchedule.ViewForms.AddForms
 
 
             return fieldsOfStudiesData;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

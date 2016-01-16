@@ -48,14 +48,14 @@ namespace UniSchedule.ViewForms.AddForms
                 comm.Parameters.AddWithValue("@IdSubToSubTyp", subjectId);
                 comm.CommandType = CommandType.StoredProcedure;
                 con.Open();
-                SqlParameter returnParameter = comm.Parameters.Add("@Error", SqlDbType.Int);
+                SqlParameter returnParameter = comm.Parameters.Add("@Variable", SqlDbType.Int);
                 returnParameter.Direction = ParameterDirection.ReturnValue;
                 comm.ExecuteNonQuery();
                 int id = (int)returnParameter.Value;
 
-                if (id == 1)
-                    MessageBox.Show("Podana data już istnieje w bazie danych!");
-                else MessageBox.Show("Data zapisana poprawnie!");
+                if (id == 0)
+                    MessageBox.Show("Wykładowca jest już powiązany z tym przedmiotem!");
+                else MessageBox.Show("Powiązanie zapisano poprawnie!");
             }
             catch
             {
@@ -110,6 +110,11 @@ namespace UniSchedule.ViewForms.AddForms
             cbSubject.Enabled = true;
             conn.Close();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

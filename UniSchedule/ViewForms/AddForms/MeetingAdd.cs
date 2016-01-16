@@ -45,9 +45,9 @@ namespace UniSchedule.ViewForms.AddForms
                 comm.ExecuteNonQuery();
                 int id = (int)returnParameter.Value;
 
-                if (id == 1)
+                if (id == 0)
                     MessageBox.Show("Podana data już istnieje w bazie danych!");
-                else MessageBox.Show("Data zapisana poprawnie!");
+                else if (id == 1) MessageBox.Show("Data zapisana poprawnie!");
 
                 con.Close();
             }

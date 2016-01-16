@@ -79,7 +79,7 @@ namespace UniSchedule.Logging
             this.comm.Parameters.AddWithValue("@PasswordUser", password);
             this.comm.CommandType = CommandType.StoredProcedure;
             con.Open();
-            SqlParameter returnParameter = comm.Parameters.Add("@IsTrue", SqlDbType.Int);
+            SqlParameter returnParameter = comm.Parameters.Add("@Variable", SqlDbType.Int);
             returnParameter.Direction = ParameterDirection.ReturnValue;
             comm.ExecuteNonQuery();
             int isTrue = (int)returnParameter.Value;

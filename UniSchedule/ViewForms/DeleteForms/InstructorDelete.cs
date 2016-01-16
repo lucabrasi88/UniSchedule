@@ -72,7 +72,7 @@ namespace UniSchedule.ViewForms.DeleteForms
                 con.Open();
                 comm.ExecuteNonQuery();
                 MessageBox.Show("Usunięto wykładowcę!");
-                con.Close();
+                
             }
 
             catch
@@ -80,6 +80,12 @@ namespace UniSchedule.ViewForms.DeleteForms
                 MessageBox.Show("Wystąpił nieoczekiwany błąd!");
             }
 
+            finally
+            {
+                con.Close();
+            }
+
+            AttachDataToInstructorsList();
         }
 
         private void AttachDataToFieldId()
